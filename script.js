@@ -1,4 +1,7 @@
-// Wait for the DOM to load
+/* ==========================================================================
+   AATHILAKSHMI S P - PORTFOLIO INTERACTIVE CONTROLLER
+   ========================================================================== */
+
 document.addEventListener('DOMContentLoaded', () => {
 
     /* ==========================================
@@ -20,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Close menu when a link is clicked
+    // Close mobile menu when a nav link is clicked
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
             if (navMenu && navMenu.classList.contains('active')) {
@@ -34,85 +37,85 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     /* ==========================================
-       SCROLL INDICATOR & HEADER STYLE
+       SCROLL INDICATOR & HEADER BLUR STYLE
        ========================================== */
     const scrollProgress = document.getElementById('scroll-progress');
     const header = document.querySelector('.header');
 
     window.addEventListener('scroll', () => {
-        // Scroll progress bar width
         const totalScroll = document.documentElement.scrollHeight - window.innerHeight;
-        if (totalScroll > 0) {
+        if (totalScroll > 0 && scrollProgress) {
             const scrollPercent = (window.scrollY / totalScroll) * 100;
             scrollProgress.style.width = scrollPercent + '%';
         }
 
-        // Header glassmorphism shadow addition
-        if (window.scrollY > 50) {
-            header.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.4), 0 1px 0 rgba(255, 255, 255, 0.05)';
-            header.style.background = 'rgba(8, 8, 13, 0.85)';
-        } else {
-            header.style.boxShadow = 'none';
-            header.style.background = 'rgba(8, 8, 13, 0.6)';
+        if (header) {
+            if (window.scrollY > 50) {
+                header.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.5), 0 1px 0 rgba(255, 255, 255, 0.08)';
+                header.style.background = 'rgba(8, 8, 13, 0.9)';
+            } else {
+                header.style.boxShadow = 'none';
+                header.style.background = 'rgba(8, 8, 13, 0.7)';
+            }
         }
     });
 
 
     /* ==========================================
-       TYPEWRITER SUBTITLE CYCLE
+       TYPEWRITER SUBTITLE CYCLE (ALIGNED TO RESUME)
        ========================================== */
-    const words = ["Cyber Security Engineer", "Full Stack Developer", "AI Research Enthusiast", "Software Engineer"];
+    const titles = [
+        "Cybersecurity Enthusiast",
+        "UI/UX Designer",
+        "Full-Stack Developer",
+        "Indian Patent Co-Inventor",
+        "Springer Nature Author",
+        "SIH 2026 National Finalist"
+    ];
     let wordIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
     const typingTextEl = document.getElementById('typing-text');
-    let typingSpeed = 100;
+    let typingSpeed = 90;
 
     function typeEffect() {
         if (!typingTextEl) return;
         
-        const currentWord = words[wordIndex];
+        const currentWord = titles[wordIndex];
         
         if (isDeleting) {
-            // Delete characters
             typingTextEl.textContent = currentWord.substring(0, charIndex - 1);
             charIndex--;
-            typingSpeed = 50; // Delete faster
+            typingSpeed = 45;
         } else {
-            // Add characters
             typingTextEl.textContent = currentWord.substring(0, charIndex + 1);
             charIndex++;
-            typingSpeed = 100; // Type standard speed
+            typingSpeed = 85;
         }
 
-        // Cycle control
         if (!isDeleting && charIndex === currentWord.length) {
-            // Pause at full word
-            typingSpeed = 2000;
+            typingSpeed = 2200; // Hold completed word
             isDeleting = true;
         } else if (isDeleting && charIndex === 0) {
             isDeleting = false;
-            wordIndex = (wordIndex + 1) % words.length;
-            typingSpeed = 500; // Pause before typing next word
+            wordIndex = (wordIndex + 1) % titles.length;
+            typingSpeed = 400; // Pause before typing next title
         }
 
         setTimeout(typeEffect, typingSpeed);
     }
-    
-    // Start typewriter
     typeEffect();
 
 
     /* ==========================================
-       INTERACTIVE CANVAS PARTICLES (CYBER GRAPH)
+       CANVAS PARTICLES - CYBER GRAPH MATRIX
        ========================================== */
     const canvas = document.getElementById('particle-canvas');
     if (canvas) {
         const ctx = canvas.getContext('2d');
         let particles = [];
-        let mouse = { x: null, y: null, radius: 120 };
+        let mouse = { x: null, y: null, radius: 130 };
 
-        // Handle resizing
         function resizeCanvas() {
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
@@ -120,10 +123,9 @@ document.addEventListener('DOMContentLoaded', () => {
         resizeCanvas();
         window.addEventListener('resize', resizeCanvas);
 
-        // Track mouse position relative to window
         window.addEventListener('mousemove', (e) => {
-            mouse.x = e.x;
-            mouse.y = e.y;
+            mouse.x = e.clientX;
+            mouse.y = e.clientY;
         });
 
         window.addEventListener('mouseleave', () => {
@@ -131,15 +133,14 @@ document.addEventListener('DOMContentLoaded', () => {
             mouse.y = null;
         });
 
-        // Particle constructor
         class Particle {
             constructor() {
                 this.x = Math.random() * canvas.width;
                 this.y = Math.random() * canvas.height;
-                this.vx = (Math.random() - 0.5) * 0.4;
-                this.vy = (Math.random() - 0.5) * 0.4;
+                this.vx = (Math.random() - 0.5) * 0.45;
+                this.vy = (Math.random() - 0.5) * 0.45;
                 this.radius = Math.random() * 2 + 1;
-                this.color = Math.random() > 0.5 ? 'rgba(6, 182, 212, 0.4)' : 'rgba(59, 130, 246, 0.4)'; // Cyan or Blue
+                this.color = Math.random() > 0.5 ? 'rgba(6, 182, 212, 0.45)' : 'rgba(59, 130, 246, 0.45)';
             }
 
             draw() {
@@ -150,40 +151,35 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             update() {
-                // Bounds check
                 if (this.x < 0 || this.x > canvas.width) this.vx = -this.vx;
                 if (this.y < 0 || this.y > canvas.height) this.vy = -this.vy;
 
-                // Move
                 this.x += this.vx;
                 this.y += this.vy;
 
-                // Mouse repel interaction (Cybersecurity barrier effect)
-                if (mouse.x != null && mouse.y != null) {
-                    let dx = this.x - mouse.x;
-                    let dy = this.y - mouse.y;
-                    let dist = Math.sqrt(dx * dx + dy * dy);
+                // Mouse repel shield effect
+                if (mouse.x !== null && mouse.y !== null) {
+                    const dx = this.x - mouse.x;
+                    const dy = this.y - mouse.y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
                     if (dist < mouse.radius) {
-                        let force = (mouse.radius - dist) / mouse.radius;
-                        let angle = Math.atan2(dy, dx);
-                        this.x += Math.cos(angle) * force * 1.5;
-                        this.y += Math.sin(angle) * force * 1.5;
+                        const force = (mouse.radius - dist) / mouse.radius;
+                        const angle = Math.atan2(dy, dx);
+                        this.x += Math.cos(angle) * force * 1.8;
+                        this.y += Math.sin(angle) * force * 1.8;
                     }
                 }
             }
         }
 
-        // Initialize particles
-        const particleCount = Math.min(Math.floor((canvas.width * canvas.height) / 16000), 80);
+        const particleCount = Math.min(Math.floor((canvas.width * canvas.height) / 15000), 75);
         for (let i = 0; i < particleCount; i++) {
             particles.push(new Particle());
         }
 
-        // Render loop
         function animate() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             
-            // Draw connections (node network graph)
             for (let i = 0; i < particles.length; i++) {
                 particles[i].update();
                 particles[i].draw();
@@ -193,9 +189,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     const dy = particles[i].y - particles[j].y;
                     const dist = Math.sqrt(dx * dx + dy * dy);
 
-                    if (dist < 100) {
-                        // Node connection opacity based on distance
-                        const alpha = (100 - dist) / 100 * 0.15;
+                    if (dist < 110) {
+                        const alpha = ((110 - dist) / 110) * 0.18;
                         ctx.strokeStyle = `rgba(59, 130, 246, ${alpha})`;
                         ctx.lineWidth = 1;
                         ctx.beginPath();
@@ -212,7 +207,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     /* ==========================================
-       SPOTLIGHT GLOW CURSOR POSITION TRACKING
+     SPOTLIGHT GLOW CURSOR POSITION TRACKING
        ========================================== */
     const cards = document.querySelectorAll('.glass-card');
     cards.forEach(card => {
@@ -227,7 +222,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     /* ==========================================
-       SCROLL-REVEAL OBSERVER (FADE-IN EFFECT)
+       SCROLL-REVEAL & STAT PROGRESS OBSERVER
        ========================================== */
     const revealElements = document.querySelectorAll('.reveal');
     
@@ -236,7 +231,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('active');
                 
-                // Animate progress bars when skills section is revealed
+                // Animate skill progress bars
                 const progressBars = entry.target.querySelectorAll('.skill-progress-bar');
                 if (progressBars.length > 0) {
                     progressBars.forEach(bar => {
@@ -244,24 +239,87 @@ document.addEventListener('DOMContentLoaded', () => {
                         bar.style.width = '0%';
                         setTimeout(() => {
                             bar.style.width = width;
-                        }, 100);
+                        }, 120);
                     });
                 }
                 
-                // Keep observing or unobserve to freeze in active state
                 revealObserver.unobserve(entry.target);
             }
         });
     }, {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
+        threshold: 0.08,
+        rootMargin: '0px 0px -40px 0px'
     });
 
     revealElements.forEach(el => revealObserver.observe(el));
 
 
     /* ==========================================
-       ACTIVE NAV LINK HIGHLIGHT SPY
+       INTERACTIVE PROJECT FILTERS
+       ========================================== */
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.featured-project-card, .project-card');
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            const filterValue = btn.getAttribute('data-filter');
+
+            projectCards.forEach(card => {
+                const categories = card.getAttribute('data-category') || '';
+                if (filterValue === 'all' || categories.includes(filterValue)) {
+                    card.style.display = '';
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(15px)';
+                    setTimeout(() => {
+                        card.style.transition = 'all 0.4s ease';
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                    }, 50);
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    });
+
+
+    /* ==========================================
+       INTERACTIVE SKILL CATEGORY FILTERS
+       ========================================== */
+    const skillTabs = document.querySelectorAll('.skill-tab-btn');
+    const skillCategories = document.querySelectorAll('.skill-category');
+
+    skillTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            skillTabs.forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+
+            const filter = tab.getAttribute('data-filter');
+
+            skillCategories.forEach(cat => {
+                const catType = cat.getAttribute('data-category');
+                if (filter === 'all' || catType === filter) {
+                    cat.style.display = '';
+                    cat.style.opacity = '0';
+                    cat.style.transform = 'translateY(15px)';
+                    setTimeout(() => {
+                        cat.style.transition = 'all 0.4s ease';
+                        cat.style.opacity = '1';
+                        cat.style.transform = 'translateY(0)';
+                    }, 50);
+                } else {
+                    cat.style.display = 'none';
+                }
+            });
+        });
+    });
+
+
+    /* ==========================================
+       ACTIVE NAVIGATION SPY
        ========================================== */
     const sections = document.querySelectorAll('section');
     
@@ -278,12 +336,63 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }, {
-        threshold: 0.4,
-        rootMargin: '-20% 0px -40% 0px'
+        threshold: 0.35,
+        rootMargin: '-15% 0px -40% 0px'
     });
 
     sections.forEach(sec => scrollSpyObserver.observe(sec));
 });
+
+
+/* ==========================================
+   TOAST NOTIFICATION ENGINE
+   ========================================== */
+function showToast(message, icon = 'fa-solid fa-circle-check') {
+    const container = document.getElementById('toast-container');
+    if (!container) return;
+
+    const toast = document.createElement('div');
+    toast.className = 'toast';
+    toast.innerHTML = `<i class="${icon}"></i> <span>${message}</span>`;
+    
+    container.appendChild(toast);
+
+    setTimeout(() => {
+        toast.style.animation = 'toast-out 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards';
+        setTimeout(() => {
+            if (toast.parentNode) {
+                toast.parentNode.removeChild(toast);
+            }
+        }, 300);
+    }, 3200);
+}
+
+
+/* ==========================================
+   CLIPBOARD UTILITY (COPY CONTACT / CITATIONS)
+   ========================================== */
+function copyContact(text, feedbackMsg = 'Copied to clipboard!') {
+    navigator.clipboard.writeText(text).then(() => {
+        showToast(feedbackMsg, 'fa-solid fa-copy');
+    }).catch(() => {
+        // Fallback for older browsers
+        const textarea = document.createElement('textarea');
+        textarea.value = text;
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textarea);
+        showToast(feedbackMsg, 'fa-solid fa-copy');
+    });
+}
+
+function copyCitation(citationText, feedbackMsg = 'Citation copied!') {
+    navigator.clipboard.writeText(citationText).then(() => {
+        showToast(feedbackMsg, 'fa-solid fa-book-bookmark');
+    }).catch(() => {
+        showToast(feedbackMsg, 'fa-solid fa-book-bookmark');
+    });
+}
 
 
 /* ==========================================
@@ -305,20 +414,17 @@ function handleFormSubmit(event) {
     status.className = "form-status";
     status.textContent = "";
 
-    // Mock API Delay
+    // Simulated API submission
     setTimeout(() => {
-        // Success feedback
         status.className = "form-status success";
         status.innerHTML = `<i class="fa-solid fa-circle-check"></i> Thank you! Your message has been sent successfully. I will get back to you shortly.`;
         
-        // Reset fields
+        showToast("Message sent successfully!", "fa-regular fa-paper-plane");
         form.reset();
         
-        // Restore button state
         submitBtn.disabled = false;
         submitBtn.innerHTML = originalText;
         
-        // Smoothly fade out success alert after 6 seconds
         setTimeout(() => {
             status.style.opacity = '0';
             setTimeout(() => {
@@ -328,7 +434,7 @@ function handleFormSubmit(event) {
             }, 500);
         }, 6000);
 
-    }, 1500);
+    }, 1200);
 }
 
 
@@ -359,7 +465,14 @@ window.addEventListener('click', (event) => {
     }
 });
 
-// Print/PDF Handler
+// Close modal with Escape key
+window.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+        closeResumeModal();
+    }
+});
+
+// Print or Save as PDF
 function printResume() {
     window.print();
 }

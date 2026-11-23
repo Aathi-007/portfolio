@@ -3,25 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aathilakshmi S P | Cyber Security & Software Engineer Portfolio</title>
+    <title>AATHILAKSHMI S P | Computer Science & Cyber Security Engineer</title>
     
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Professional portfolio of Aathilakshmi S P, a Computer Science & Engineering (Cyber Security) student at SKCET. Specializing in secure software development, research, and full-stack engineering.">
-    <meta name="keywords" content="Aathilakshmi S P, Cyber Security, Software Engineering, SKCET, Portfolio, Web Developer, AI Security, MCP Server Security, India Patent, Java, Python, React">
+    <meta name="description" content="Portfolio of Aathilakshmi S P - Computer Science & Engineering (Cyber Security) at SKCET. Interests in Cybersecurity, UI/UX Design & Full-Stack Development. Indian Patent Co-Inventor, Springer Nature Author, SIH 2026 Finalist.">
+    <meta name="keywords" content="Aathilakshmi S P, Cyber Security, UI UX Design, Full Stack Developer, SKCET, Indian Patent, Springer Nature, Smart India Hackathon, Hi-AR, Java, Python, React, Kali Linux">
     <meta name="author" content="Aathilakshmi S P">
     
-    <!-- Open Graph / Facebook -->
+    <!-- Open Graph / Meta -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="Aathilakshmi S P | Cyber Security & Software Engineer">
-    <meta property="og:description" content="Explore my academic projects, published research, patent, and cybersecurity certifications. Portfolio designed for top recruiters.">
+    <meta property="og:description" content="Explore my projects, research publication in Springer Nature, published Indian patent, and cybersecurity certifications.">
     
     <!-- Fonts & Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
-    <!-- Custom Style -->
+    <!-- Custom Stylesheet -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -32,15 +32,18 @@
     <!-- Scroll Progress Indicator -->
     <div id="scroll-progress"></div>
 
-    <!-- Glowing Background Blobs (Premium Vercel/Linear Style) -->
+    <!-- Glowing Background Blobs -->
     <div class="blob blob-blue"></div>
     <div class="blob blob-purple"></div>
     <div class="blob blob-cyan"></div>
 
+    <!-- Toast Notification Container -->
+    <div id="toast-container" class="toast-container"></div>
+
     <!-- Header / Navigation -->
     <header class="header">
         <div class="header-container">
-            <a href="#" class="logo">
+            <a href="#hero" class="logo">
                 <span class="logo-accent">&lt;</span>AATHI<span class="logo-accent">.CYS /&gt;</span>
             </a>
             
@@ -55,10 +58,10 @@
             </nav>
 
             <div class="nav-actions">
-                <button class="btn btn-secondary nav-btn" onclick="openResumeModal()">
+                <button class="btn btn-secondary nav-btn" onclick="openResumeModal()" title="View & Print Resume">
                     <i class="fa-regular fa-file-pdf"></i> Resume
                 </button>
-                <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle menu">
+                <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Navigation Menu">
                     <i class="fa-solid fa-bars-staggered"></i>
                 </button>
             </div>
@@ -71,7 +74,9 @@
             <div class="container hero-container">
                 <div class="hero-content">
                     <div class="badge-container reveal">
-                        <span class="cyber-badge"><i class="fa-solid fa-shield-halved"></i> Cyber Security & Software Engineering</span>
+                        <span class="cyber-badge">
+                            <i class="fa-solid fa-shield-halved"></i> Computer Science & Engineering | Cyber Security
+                        </span>
                     </div>
                     <h1 class="hero-title reveal">
                         AATHILAKSHMI S P
@@ -80,279 +85,463 @@
                         I am a <span id="typing-text"></span><span class="typed-cursor">|</span>
                     </h2>
                     <p class="hero-intro reveal">
-                        Third-year Computer Science and Engineering (Cyber Security) student at <strong>Sri Krishna College of Engineering and Technology (SKCET)</strong>, passionate about building secure, scalable software solutions and conducting impactful AI-driven cybersecurity research. Experienced in hackathons, software development, and innovative research projects.
+                        Third-year Computer Science and Engineering (Cyber Security) student at <strong>Sri Krishna College of Engineering and Technology (SKCET)</strong>, with keen interests in <strong>Cybersecurity, UI/UX design, and full-stack development</strong>. Focused on creating user-centered digital experiences and developing practical solutions through hands-on projects, continuous learning, and problem-solving.
                     </p>
+                    
+                    <!-- Quick Contact Pills -->
+                    <div class="hero-quick-meta reveal">
+                        <a href="mailto:spaathilakshmi@gmail.com" class="meta-pill" title="Send Email">
+                            <i class="fa-solid fa-envelope"></i> spaathilakshmi@gmail.com
+                        </a>
+                        <a href="tel:+916380142486" class="meta-pill" title="Call">
+                            <i class="fa-solid fa-phone"></i> +91 63801 42486
+                        </a>
+                        <span class="meta-pill">
+                            <i class="fa-solid fa-location-dot"></i> Chennai, Tamil Nadu
+                        </span>
+                    </div>
+
                     <div class="hero-ctas reveal">
                         <a href="#projects" class="btn btn-primary">
-                            <span>View Projects</span> <i class="fa-solid fa-arrow-right"></i>
+                            <span>Explore Projects</span> <i class="fa-solid fa-arrow-right"></i>
                         </a>
                         <button onclick="openResumeModal()" class="btn btn-secondary">
-                            <i class="fa-solid fa-download"></i> Download CV
+                            <i class="fa-solid fa-file-lines"></i> View Resume
                         </button>
                         <a href="#contact" class="btn btn-link">
                             Contact Me
                         </a>
                     </div>
+
+                    <!-- Social Media Links -->
+                    <div class="hero-socials reveal">
+                        <a href="https://linkedin.com/in/aathilakshmi-s-p-054343327" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="LinkedIn">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com/Aathi-007" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="GitHub">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a href="mailto:spaathilakshmi@gmail.com" class="social-icon-btn" aria-label="Email">
+                            <i class="fa-solid fa-envelope"></i>
+                        </a>
+                        <button class="social-icon-btn" onclick="copyContact('spaathilakshmi@gmail.com', 'Email copied!')" title="Copy Email">
+                            <i class="fa-regular fa-copy"></i>
+                        </button>
+                    </div>
                 </div>
                 
-                <!-- Graphic Element in Hero -->
+                <!-- Interactive Cyber/AR Shield Graphic -->
                 <div class="hero-graphic reveal">
                     <div class="graphic-shield">
                         <div class="shield-inner">
-                            <i class="fa-solid fa-fingerprint shield-icon"></i>
+                            <i class="fa-solid fa-shield-virus shield-icon"></i>
                             <div class="glow-ring"></div>
-                            <div class="orbit-particle p1"></div>
-                            <div class="orbit-particle p2"></div>
-                            <div class="orbit-particle p3"></div>
+                            <div class="glow-ring secondary-ring"></div>
+                            <div class="orbit-particle p1" title="Cyber Security"></div>
+                            <div class="orbit-particle p2" title="UI/UX Design"></div>
+                            <div class="orbit-particle p3" title="Full Stack"></div>
+                            
+                            <!-- Floating Tech Chips -->
+                            <div class="hero-tech-chip chip-1"><i class="fa-solid fa-code"></i> Full-Stack</div>
+                            <div class="hero-tech-chip chip-2"><i class="fa-solid fa-lock"></i> CyberSec</div>
+                            <div class="hero-tech-chip chip-3"><i class="fa-brands fa-figma"></i> UI/UX</div>
                         </div>
                     </div>
                 </div>
             </div>
             
             <a href="#about" class="scroll-down" aria-label="Scroll Down">
-                <span>Explore More</span>
+                <span>Discover More</span>
                 <i class="fa-solid fa-chevron-down"></i>
             </a>
         </section>
 
-        <!-- About Me Section -->
+        <!-- About & Education Section -->
         <section id="about" class="section about-section">
             <div class="container">
                 <div class="section-header reveal">
                     <span class="section-tag">About Me</span>
-                    <h2 class="section-title">Academic & Research Focus</h2>
+                    <h2 class="section-title">Background & Education</h2>
                     <div class="section-line"></div>
                 </div>
 
                 <div class="about-grid">
+                    <!-- Bio & Core Details -->
                     <div class="about-info-panel glass-card reveal">
-                        <h3>Overview</h3>
+                        <div class="panel-header-badge">
+                            <i class="fa-solid fa-user-graduate"></i> Profile Overview
+                        </div>
+                        <h3>Passionate about Secure, User-Centered Solutions</h3>
                         <p>
-                            I am currently pursuing my <strong>Bachelor of Engineering (BE) in Computer Science and Engineering with a specialization in Cyber Security</strong> at SKCET, Coimbatore (expected graduation: 2028).
+                            I am a third-year <strong>Computer Science and Engineering (Cyber Security)</strong> student at <strong>Sri Krishna College of Engineering and Technology (SKCET)</strong>, Coimbatore (Expected 2028).
                         </p>
                         <p>
-                            My interest lies at the intersection of securing software architectures, creating intelligent defensive security systems, and designing accessible products for social impact. I possess a strong foundation in database management, data preprocessing, machine learning, and cybersecurity tools.
+                            My technical focus bridges the critical gap between <strong>Cybersecurity, UI/UX design, and Full-Stack Engineering</strong>. I believe that high security and exceptional user experience should work hand-in-hand. Whether simulating hazardous industrial environments in augmented reality, building civic platforms, or developing assistive tools for students with disabilities, I thrive on engineering impactful solutions.
                         </p>
+
+                        <!-- Academic Highlight Box -->
+                        <div class="education-card">
+                            <div class="edu-top">
+                                <div class="edu-degree">
+                                    <i class="fa-solid fa-graduation-cap edu-icon"></i>
+                                    <div>
+                                        <h4>B.E. – Computer Science and Engineering (Cyber Security)</h4>
+                                        <span class="edu-inst">Sri Krishna College of Engineering and Technology (SKCET), Coimbatore</span>
+                                    </div>
+                                </div>
+                                <div class="edu-year-badge">Expected 2028</div>
+                            </div>
+                            <div class="edu-cgpa-row">
+                                <div class="cgpa-pill">
+                                    <span class="cgpa-label">Academic CGPA</span>
+                                    <span class="cgpa-val">8.79 / 10.0</span>
+                                </div>
+                                <div class="edu-status-pill">
+                                    <i class="fa-solid fa-circle-check"></i> Consistent Academic Excellence
+                                </div>
+                            </div>
+                            <div class="edu-subjects">
+                                <span class="subjects-title">Relevant Subjects:</span>
+                                <div class="subject-tags">
+                                    <span class="sub-tag">Cyber Security</span>
+                                    <span class="sub-tag">Machine Learning</span>
+                                    <span class="sub-tag">Cloud Computing</span>
+                                    <span class="sub-tag">SQL & Database Management</span>
+                                    <span class="sub-tag">Statistics & Data Preprocessing</span>
+                                </div>
+                            </div>
+                        </div>
                         
                         <div class="meta-info-list">
                             <div class="meta-item">
-                                <span class="meta-label">Location</span>
+                                <span class="meta-label"><i class="fa-solid fa-map-pin"></i> Location</span>
                                 <span class="meta-value">Chennai, Tamil Nadu</span>
                             </div>
                             <div class="meta-item">
-                                <span class="meta-label">College</span>
-                                <span class="meta-value">SKCET, Coimbatore</span>
-                            </div>
-                            <div class="meta-item">
-                                <span class="meta-label">Interests</span>
-                                <span class="meta-value">Cybersecurity, AI, Full-Stack Dev, Software Engineering, Research</span>
-                            </div>
-                            <div class="meta-item">
-                                <span class="meta-label">Languages</span>
+                                <span class="meta-label"><i class="fa-solid fa-language"></i> Languages</span>
                                 <span class="meta-value">Tamil (Native), English (Fluent), Hindi & Telugu (Conversational)</span>
                             </div>
+                            <div class="meta-item">
+                                <span class="meta-label"><i class="fa-solid fa-compass"></i> Focus Areas</span>
+                                <span class="meta-value">Cybersecurity, UI/UX Design, Full-Stack Dev, AR/VR</span>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- Stat Cards Panel -->
-                    <div class="about-stats-grid">
-                        <div class="stat-card glass-card reveal">
-                            <div class="stat-icon-wrapper"><i class="fa-solid fa-graduation-cap"></i></div>
-                            <div class="stat-number">8.79</div>
-                            <div class="stat-label">Current CGPA</div>
-                            <div class="stat-desc">CSE - Cyber Security</div>
+                    <!-- Key Metrics & Strengths Grid -->
+                    <div class="about-stats-container">
+                        <div class="about-stats-grid">
+                            <div class="stat-card glass-card reveal" data-counter="8.79">
+                                <div class="stat-icon-wrapper text-blue"><i class="fa-solid fa-award"></i></div>
+                                <div class="stat-number">8.79</div>
+                                <div class="stat-label">CGPA</div>
+                                <div class="stat-desc">B.E. CSE (Cyber Security)</div>
+                            </div>
+                            <div class="stat-card glass-card reveal">
+                                <div class="stat-icon-wrapper text-cyan"><i class="fa-solid fa-lightbulb"></i></div>
+                                <div class="stat-number">1</div>
+                                <div class="stat-label">Published Patent</div>
+                                <div class="stat-desc">Indian Patent Co-Inventor</div>
+                            </div>
+                            <div class="stat-card glass-card reveal">
+                                <div class="stat-icon-wrapper text-purple"><i class="fa-solid fa-book-bookmark"></i></div>
+                                <div class="stat-number">1</div>
+                                <div class="stat-label">Springer Nature</div>
+                                <div class="stat-desc">Healthcare Research Paper</div>
+                            </div>
+                            <div class="stat-card glass-card reveal">
+                                <div class="stat-icon-wrapper text-green"><i class="fa-solid fa-flag-checkered"></i></div>
+                                <div class="stat-number">SIH 2026</div>
+                                <div class="stat-label">National Finalist</div>
+                                <div class="stat-desc">7th Rank at College Level</div>
+                            </div>
+                            <div class="stat-card glass-card reveal">
+                                <div class="stat-icon-wrapper text-gold"><i class="fa-solid fa-trophy"></i></div>
+                                <div class="stat-number">Top 5</div>
+                                <div class="stat-label">HackSprint Rank</div>
+                                <div class="stat-desc">IAMNEO Season 2 (out of 25)</div>
+                            </div>
+                            <div class="stat-card glass-card reveal">
+                                <div class="stat-icon-wrapper text-cyan"><i class="fa-solid fa-certificate"></i></div>
+                                <div class="stat-number">7+</div>
+                                <div class="stat-label">Certifications</div>
+                                <div class="stat-desc">Google, Deloitte, NPTEL, etc.</div>
+                            </div>
                         </div>
-                        <div class="stat-card glass-card reveal">
-                            <div class="stat-icon-wrapper"><i class="fa-solid fa-award"></i></div>
-                            <div class="stat-number">1</div>
-                            <div class="stat-label">Published Indian Patent</div>
-                            <div class="stat-desc">Co-inventor for sewer hazard detection</div>
-                        </div>
-                        <div class="stat-card glass-card reveal">
-                            <div class="stat-icon-wrapper"><i class="fa-solid fa-file-invoice"></i></div>
-                            <div class="stat-number">1</div>
-                            <div class="stat-label">Research Paper</div>
-                            <div class="stat-desc">Healthcare Optimization published</div>
-                        </div>
-                        <div class="stat-card glass-card reveal">
-                            <div class="stat-icon-wrapper"><i class="fa-solid fa-trophy"></i></div>
-                            <div class="stat-number">Top 5</div>
-                            <div class="stat-label">HackSprint Rank</div>
-                            <div class="stat-desc">IAMNEO HackSprint Season 2</div>
-                        </div>
-                        <div class="stat-card glass-card reveal">
-                            <div class="stat-icon-wrapper"><i class="fa-solid fa-certificate"></i></div>
-                            <div class="stat-number">6+</div>
-                            <div class="stat-label">Professional Certs</div>
-                            <div class="stat-desc">Google Cyber, NPTELs, ServiceNow</div>
-                        </div>
-                        <div class="stat-card glass-card reveal">
-                            <div class="stat-icon-wrapper"><i class="fa-solid fa-puzzle-piece"></i></div>
-                            <div class="stat-number">4th</div>
-                            <div class="stat-label">SIH College Rank</div>
-                            <div class="stat-desc">Smart India Hackathon 2025 Qualified</div>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Hobbies & Extracurriculars -->
-                <div class="extra-interests glass-card reveal">
-                    <h3>Hobbies & Extracurricular Activities</h3>
-                    <div class="interests-grid">
-                        <div class="interest-tag"><i class="fa-solid fa-code"></i> Solving Coding Problems</div>
-                        <div class="interest-tag"><i class="fa-solid fa-puzzle-piece"></i> Logical Puzzle Solving</div>
-                        <div class="interest-tag"><i class="fa-solid fa-table-tennis-paddle-ball"></i> Playing Badminton</div>
-                        <div class="interest-tag"><i class="fa-solid fa-scissors"></i> Creative Handcraft Activities</div>
-                        <div class="interest-tag"><i class="fa-solid fa-lightbulb"></i> Learning New Technologies</div>
+                        <!-- Core Strengths Panel from Resume -->
+                        <div class="core-strengths-card glass-card reveal">
+                            <div class="strengths-header">
+                                <i class="fa-solid fa-brain"></i>
+                                <h4>Core Methodologies & Strengths</h4>
+                            </div>
+                            <div class="strengths-grid">
+                                <div class="strength-item">
+                                    <div class="str-dot"></div>
+                                    <div>
+                                        <strong>Logical Problem-Solving</strong>
+                                        <p>Formulating algorithmic structures and systematic debugging for complex challenges.</p>
+                                    </div>
+                                </div>
+                                <div class="strength-item">
+                                    <div class="str-dot"></div>
+                                    <div>
+                                        <strong>Design Thinking</strong>
+                                        <p>NPTEL Elite + Silver certified in empathetic, user-centered prototyping & product iteration.</p>
+                                    </div>
+                                </div>
+                                <div class="strength-item">
+                                    <div class="str-dot"></div>
+                                    <div>
+                                        <strong>Research & Analytical Rigor</strong>
+                                        <p>Proven publication track record with Springer Nature and Indian Patent Office.</p>
+                                    </div>
+                                </div>
+                                <div class="strength-item">
+                                    <div class="str-dot"></div>
+                                    <div>
+                                        <strong>Technical Documentation</strong>
+                                        <p>Authored patent disclosures, scientific research manuscripts, and system specifications.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Skills Section -->
+        <!-- Technical Skills Section -->
         <section id="skills" class="section skills-section">
             <div class="container">
                 <div class="section-header reveal">
                     <span class="section-tag">Expertise</span>
-                    <h2 class="section-title">Technical Capabilities</h2>
+                    <h2 class="section-title">Technical Skills & Toolkit</h2>
                     <div class="section-line"></div>
+                    <p class="section-subtitle">Categorized according to my academic curriculum, research endeavors, and project implementations.</p>
+                </div>
+
+                <!-- Skill Filter Tabs -->
+                <div class="skill-tabs-wrapper reveal">
+                    <button class="skill-tab-btn active" data-filter="all">All Skills</button>
+                    <button class="skill-tab-btn" data-filter="dev">Programming & Dev</button>
+                    <button class="skill-tab-btn" data-filter="cyber">Cybersecurity</button>
+                    <button class="skill-tab-btn" data-filter="tools">Databases & Tools</button>
+                    <button class="skill-tab-btn" data-filter="core">Core Strengths</button>
                 </div>
 
                 <div class="skills-grid">
-                    <!-- Prog & Dev -->
-                    <div class="skill-category glass-card reveal">
+                    <!-- Programming & Development -->
+                    <div class="skill-category glass-card reveal" data-category="dev">
                         <div class="category-header">
-                            <i class="fa-solid fa-code-branch category-icon text-blue"></i>
-                            <h3>Programming & Development</h3>
+                            <div class="cat-icon-box text-blue">
+                                <i class="fa-solid fa-code"></i>
+                            </div>
+                            <div>
+                                <h3>Programming & Development</h3>
+                                <span class="cat-subtitle">Languages, Frameworks & Frontend/Backend</span>
+                            </div>
                         </div>
                         <div class="skills-list">
                             <div class="skill-item">
-                                <span class="skill-name">Java</span>
+                                <div class="skill-label-row">
+                                    <span class="skill-name"><i class="fa-brands fa-java skill-ico"></i> Java</span>
+                                    <span class="skill-perc">85%</span>
+                                </div>
                                 <div class="skill-progress-bg"><div class="skill-progress-bar" style="width: 85%"></div></div>
                             </div>
                             <div class="skill-item">
-                                <span class="skill-name">Python</span>
+                                <div class="skill-label-row">
+                                    <span class="skill-name"><i class="fa-brands fa-python skill-ico"></i> Python</span>
+                                    <span class="skill-perc">82%</span>
+                                </div>
+                                <div class="skill-progress-bg"><div class="skill-progress-bar" style="width: 82%"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-label-row">
+                                    <span class="skill-name"><i class="fa-brands fa-js skill-ico"></i> JavaScript</span>
+                                    <span class="skill-perc">78%</span>
+                                </div>
+                                <div class="skill-progress-bg"><div class="skill-progress-bar" style="width: 78%"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-label-row">
+                                    <span class="skill-name"><i class="fa-solid fa-database skill-ico"></i> SQL</span>
+                                    <span class="skill-perc">80%</span>
+                                </div>
                                 <div class="skill-progress-bg"><div class="skill-progress-bar" style="width: 80%"></div></div>
                             </div>
                             <div class="skill-item">
-                                <span class="skill-name">JavaScript</span>
+                                <div class="skill-label-row">
+                                    <span class="skill-name"><i class="fa-brands fa-react skill-ico"></i> React</span>
+                                    <span class="skill-perc">75%</span>
+                                </div>
                                 <div class="skill-progress-bg"><div class="skill-progress-bar" style="width: 75%"></div></div>
                             </div>
                             <div class="skill-item">
-                                <span class="skill-name">SQL</span>
-                                <div class="skill-progress-bg"><div class="skill-progress-bar" style="width: 80%"></div></div>
-                            </div>
-                            <div class="skill-item">
-                                <span class="skill-name">React</span>
+                                <div class="skill-label-row">
+                                    <span class="skill-name"><i class="fa-solid fa-leaf skill-ico"></i> Spring Boot</span>
+                                    <span class="skill-perc">70%</span>
+                                </div>
                                 <div class="skill-progress-bg"><div class="skill-progress-bar" style="width: 70%"></div></div>
                             </div>
-                            <div class="skill-item">
-                                <span class="skill-name">Spring Boot</span>
-                                <div class="skill-progress-bg"><div class="skill-progress-bar" style="width: 65%"></div></div>
-                            </div>
-                            <div class="skill-item text-tags">
-                                <span class="badge">HTML5</span>
-                                <span class="badge">CSS3</span>
+                            <div class="skill-tags-row">
+                                <span class="badge"><i class="fa-brands fa-html5"></i> HTML5</span>
+                                <span class="badge"><i class="fa-brands fa-css3-alt"></i> CSS3</span>
+                                <span class="badge">RESTful APIs</span>
+                                <span class="badge">C# (Unity)</span>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Cyber Security -->
-                    <div class="skill-category glass-card reveal">
+                    <!-- Cybersecurity -->
+                    <div class="skill-category glass-card reveal" data-category="cyber">
                         <div class="category-header">
-                            <i class="fa-solid fa-user-shield category-icon text-cyan"></i>
-                            <h3>Cyber Security</h3>
+                            <div class="cat-icon-box text-cyan">
+                                <i class="fa-solid fa-user-shield"></i>
+                            </div>
+                            <div>
+                                <h3>Cybersecurity</h3>
+                                <span class="cat-subtitle">Defensive Security, Auditing & Protocols</span>
+                            </div>
                         </div>
                         <div class="skills-list">
                             <div class="skill-item">
-                                <span class="skill-name">Kali Linux</span>
+                                <div class="skill-label-row">
+                                    <span class="skill-name"><i class="fa-solid fa-terminal skill-ico"></i> Kali Linux</span>
+                                    <span class="skill-perc">80%</span>
+                                </div>
                                 <div class="skill-progress-bg"><div class="skill-progress-bar" style="width: 80%"></div></div>
                             </div>
                             <div class="skill-item">
-                                <span class="skill-name">Wireshark</span>
-                                <div class="skill-progress-bg"><div class="skill-progress-bar" style="width: 75%"></div></div>
+                                <div class="skill-label-row">
+                                    <span class="skill-name"><i class="fa-solid fa-network-wired skill-ico"></i> Wireshark</span>
+                                    <span class="skill-perc">78%</span>
+                                </div>
+                                <div class="skill-progress-bg"><div class="skill-progress-bar" style="width: 78%"></div></div>
                             </div>
                             <div class="skill-item">
-                                <span class="skill-name">Nmap</span>
+                                <div class="skill-label-row">
+                                    <span class="skill-name"><i class="fa-solid fa-radar skill-ico"></i> Nmap</span>
+                                    <span class="skill-perc">80%</span>
+                                </div>
                                 <div class="skill-progress-bg"><div class="skill-progress-bar" style="width: 80%"></div></div>
                             </div>
                             <div class="skill-item">
-                                <span class="skill-name">Burp Suite</span>
-                                <div class="skill-progress-bg"><div class="skill-progress-bar" style="width: 65%"></div></div>
+                                <div class="skill-label-row">
+                                    <span class="skill-name"><i class="fa-solid fa-bug skill-ico"></i> Burp Suite</span>
+                                    <span class="skill-perc">72%</span>
+                                </div>
+                                <div class="skill-progress-bg"><div class="skill-progress-bar" style="width: 72%"></div></div>
                             </div>
                             <div class="skill-item">
-                                <span class="skill-name">OWASP Top 10</span>
-                                <div class="skill-progress-bg"><div class="skill-progress-bar" style="width: 75%"></div></div>
+                                <div class="skill-label-row">
+                                    <span class="skill-name"><i class="fa-solid fa-shield-cat skill-ico"></i> OWASP Top 10</span>
+                                    <span class="skill-perc">82%</span>
+                                </div>
+                                <div class="skill-progress-bg"><div class="skill-progress-bar" style="width: 82%"></div></div>
                             </div>
-                            <div class="skill-item text-tags">
-                                <span class="badge badge-sec">Threat Analysis</span>
-                                <span class="badge badge-sec">Secure Coding</span>
+                            <div class="skill-tags-row">
+                                <span class="badge badge-sec">Vulnerability Analysis</span>
+                                <span class="badge badge-sec">Packet Inspection</span>
+                                <span class="badge badge-sec">Incident Simulation (Deloitte)</span>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Databases & Tools -->
-                    <div class="skill-category glass-card reveal">
+                    <!-- Databases & Developer Tools -->
+                    <div class="skill-category glass-card reveal" data-category="tools">
                         <div class="category-header">
-                            <i class="fa-solid fa-screwdriver-wrench category-icon text-purple"></i>
-                            <h3>Databases & Developer Tools</h3>
+                            <div class="cat-icon-box text-purple">
+                                <i class="fa-solid fa-toolbox"></i>
+                            </div>
+                            <div>
+                                <h3>Databases & Tools</h3>
+                                <span class="cat-subtitle">Design Tools, VCS, Environments & Storage</span>
+                            </div>
                         </div>
                         <div class="skills-list">
                             <div class="skill-item">
-                                <span class="skill-name">MySQL</span>
-                                <div class="skill-progress-bg"><div class="skill-progress-bar" style="width: 80%"></div></div>
-                            </div>
-                            <div class="skill-item">
-                                <span class="skill-name">MongoDB</span>
-                                <div class="skill-progress-bg"><div class="skill-progress-bar" style="width: 70%"></div></div>
-                            </div>
-                            <div class="skill-item">
-                                <span class="skill-name">Git & GitHub</span>
+                                <div class="skill-label-row">
+                                    <span class="skill-name"><i class="fa-brands fa-figma skill-ico text-purple"></i> Figma (UI/UX)</span>
+                                    <span class="skill-perc">85%</span>
+                                </div>
                                 <div class="skill-progress-bg"><div class="skill-progress-bar" style="width: 85%"></div></div>
                             </div>
                             <div class="skill-item">
-                                <span class="skill-name">Linux OS</span>
-                                <div class="skill-progress-bg"><div class="skill-progress-bar" style="width: 75%"></div></div>
+                                <div class="skill-label-row">
+                                    <span class="skill-name"><i class="fa-solid fa-server skill-ico"></i> MySQL</span>
+                                    <span class="skill-perc">80%</span>
+                                </div>
+                                <div class="skill-progress-bg"><div class="skill-progress-bar" style="width: 80%"></div></div>
                             </div>
                             <div class="skill-item">
-                                <span class="skill-name">VS Code</span>
+                                <div class="skill-label-row">
+                                    <span class="skill-name"><i class="fa-brands fa-git-alt skill-ico"></i> Git & GitHub</span>
+                                    <span class="skill-perc">85%</span>
+                                </div>
+                                <div class="skill-progress-bg"><div class="skill-progress-bar" style="width: 85%"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-label-row">
+                                    <span class="skill-name"><i class="fa-brands fa-linux skill-ico"></i> Linux Environments</span>
+                                    <span class="skill-perc">78%</span>
+                                </div>
+                                <div class="skill-progress-bg"><div class="skill-progress-bar" style="width: 78%"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-label-row">
+                                    <span class="skill-name"><i class="fa-solid fa-code-compare skill-ico"></i> VS Code</span>
+                                    <span class="skill-perc">90%</span>
+                                </div>
                                 <div class="skill-progress-bg"><div class="skill-progress-bar" style="width: 90%"></div></div>
                             </div>
-                            <div class="skill-item text-tags">
-                                <span class="badge">Machine Learning Basics</span>
-                                <span class="badge">Data Preprocessing</span>
+                            <div class="skill-tags-row">
+                                <span class="badge">Firebase</span>
+                                <span class="badge">Unity 3D / ARCore</span>
+                                <span class="badge">Prototyping</span>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Professional Skills -->
-                    <div class="skill-category glass-card reveal">
+                    <!-- Core Strengths & Methodologies -->
+                    <div class="skill-category glass-card reveal" data-category="core">
                         <div class="category-header">
-                            <i class="fa-solid fa-brain category-icon text-green"></i>
-                            <h3>Professional & Methodology</h3>
+                            <div class="cat-icon-box text-green">
+                                <i class="fa-solid fa-lightbulb"></i>
+                            </div>
+                            <div>
+                                <h3>Core Strengths</h3>
+                                <span class="cat-subtitle">Methodologies & Engineering Process</span>
+                            </div>
                         </div>
                         <div class="skills-list">
-                            <div class="professional-skills-container">
-                                <div class="prof-skill-item">
-                                    <div class="prof-icon"><i class="fa-solid fa-lightbulb"></i></div>
-                                    <div>
-                                        <h4>Design Thinking & Problem Solving</h4>
-                                        <p>Certified design thinking specialist with logical and structural approach to complex codes.</p>
-                                    </div>
+                            <div class="prof-card-item">
+                                <div class="pci-icon text-cyan"><i class="fa-solid fa-cubes"></i></div>
+                                <div>
+                                    <h4>Logical Problem-Solving</h4>
+                                    <p>Structured problem decomposition, data modeling, and clean algorithmic thinking.</p>
                                 </div>
-                                <div class="prof-skill-item">
-                                    <div class="prof-icon"><i class="fa-solid fa-book-open"></i></div>
-                                    <div>
-                                        <h4>Research & Documentation</h4>
-                                        <p>Strong writing and documentation skills demonstrated through patent filing and research publication.</p>
-                                    </div>
+                            </div>
+                            <div class="prof-card-item">
+                                <div class="pci-icon text-gold"><i class="fa-solid fa-pen-nib"></i></div>
+                                <div>
+                                    <h4>Design Thinking (NPTEL Elite+Silver)</h4>
+                                    <p>Human-centered empathic design, wireframing, high-fidelity prototypes, and user validation.</p>
                                 </div>
-                                <div class="prof-skill-item">
-                                    <div class="prof-icon"><i class="fa-solid fa-users"></i></div>
-                                    <div>
-                                        <h4>Team Collaboration</h4>
-                                        <p>Active hackathon leader and departmental executive with proven communication skills.</p>
-                                    </div>
+                            </div>
+                            <div class="prof-card-item">
+                                <div class="pci-icon text-purple"><i class="fa-solid fa-microscope"></i></div>
+                                <div>
+                                    <h4>Research & Data Preprocessing</h4>
+                                    <p>Statistical analysis, hypothesis testing, and academic paper authoring in Springer Nature.</p>
+                                </div>
+                            </div>
+                            <div class="prof-card-item">
+                                <div class="pci-icon text-green"><i class="fa-solid fa-file-signature"></i></div>
+                                <div>
+                                    <h4>Technical Documentation</h4>
+                                    <p>Patent claims drafting, software requirements specifications (SRS), and API documentation.</p>
                                 </div>
                             </div>
                         </div>
@@ -366,103 +555,181 @@
             <div class="container">
                 <div class="section-header reveal">
                     <span class="section-tag">Portfolio</span>
-                    <h2 class="section-title">Academic Projects & Research</h2>
+                    <h2 class="section-title">Featured Projects</h2>
                     <div class="section-line"></div>
+                    <p class="section-subtitle">Practical engineering projects addressing industrial safety, civic issues, accessibility, and resource logistics.</p>
                 </div>
 
-                <!-- Highlighted Research Card -->
-                <div class="research-highlight-card glass-card reveal">
-                    <div class="research-badge-wrapper">
-                        <span class="research-badge"><i class="fa-solid fa-microscope animate-pulse"></i> CURRENT RESEARCH</span>
-                    </div>
-                    <div class="research-content-grid">
-                        <div class="research-text">
-                            <h3>Dynamic Trust Evaluation Framework for Detecting Malicious MCP Servers Using AI</h3>
-                            <p class="research-description">
-                                Developing an intelligent, security-first validation framework designed to analyze and assess the safety of Model Context Protocol (MCP) servers in real-time. By applying machine learning models, the system computes trust thresholds and identifies anomalous actions or insecure calls before execution.
+                <!-- Project Filter Buttons -->
+                <div class="project-filters reveal">
+                    <button class="filter-btn active" data-filter="all">All Projects (4)</button>
+                    <button class="filter-btn" data-filter="ar">AR & Safety (SIH 2026)</button>
+                    <button class="filter-btn" data-filter="civic">Civic Tech (SIH 2025)</button>
+                    <button class="filter-btn" data-filter="accessibility">Accessibility & UI/UX</button>
+                    <button class="filter-btn" data-filter="award">Award Winners</button>
+                </div>
+
+                <!-- Featured Flagship Project: Hi-AR Industrial Safety Training -->
+                <div class="featured-project-card glass-card reveal" data-category="ar award">
+                    <div class="featured-project-grid">
+                        <div class="fp-content">
+                            <div class="fp-badge-row">
+                                <span class="fp-badge"><i class="fa-solid fa-vr-cardboard"></i> SIH 2026 FINALS QUALIFIER</span>
+                                <span class="fp-status-tag"><i class="fa-solid fa-gear fa-spin"></i> Active Development</span>
+                            </div>
+                            <h3 class="fp-title">Hi-AR – Industrial Safety Training</h3>
+                            <p class="fp-college-rank">Smart India Hackathon 2026 • <strong>Qualified for National Finals</strong> (7th Rank at College Level)</p>
+                            <p class="fp-desc">
+                                Developing an immersive, Augmented Reality-based industrial safety training application that bridges hazardous real-world operations with safe virtual practice. Features high-fidelity hazard simulations, robust offline functionality for remote industrial worksites, and cryptographic QR-based certification verification.
                             </p>
-                            <div class="research-highlights">
-                                <div class="rh-item"><i class="fa-solid fa-circle-check text-cyan"></i> AI-powered Trust Evaluation</div>
-                                <div class="rh-item"><i class="fa-solid fa-circle-check text-cyan"></i> MCP Architecture Security</div>
-                                <div class="rh-item"><i class="fa-solid fa-circle-check text-cyan"></i> Threat Detection & Isolation</div>
-                                <div class="rh-item"><i class="fa-solid fa-circle-check text-cyan"></i> Intelligent Risk Analysis</div>
+
+                            <!-- Feature highlights -->
+                            <div class="fp-features-grid">
+                                <div class="fp-feat-item">
+                                    <i class="fa-solid fa-triangle-exclamation text-gold"></i>
+                                    <span>Interactive Hazard Simulations</span>
+                                </div>
+                                <div class="fp-feat-item">
+                                    <i class="fa-solid fa-wifi-slash text-cyan"></i>
+                                    <span>Reliable Offline-First Architecture</span>
+                                </div>
+                                <div class="fp-feat-item">
+                                    <i class="fa-solid fa-qrcode text-green"></i>
+                                    <span>QR-Based Certificate Verification</span>
+                                </div>
+                                <div class="fp-feat-item">
+                                    <i class="fa-solid fa-chart-line text-purple"></i>
+                                    <span>Worker Safety Analytics & Scoring</span>
+                                </div>
                             </div>
+
                             <div class="project-tags">
-                                <span class="tag-badge tag-purple">Artificial Intelligence</span>
-                                <span class="tag-badge tag-cyan">Model Context Protocol</span>
-                                <span class="tag-badge tag-blue">Security Auditing</span>
-                                <span class="tag-badge">Python</span>
+                                <span class="tag-badge tag-cyan"><i class="fa-solid fa-cube"></i> Unity</span>
+                                <span class="tag-badge tag-blue"><i class="fa-solid fa-code"></i> C#</span>
+                                <span class="tag-badge tag-purple"><i class="fa-solid fa-vr-cardboard"></i> ARCore</span>
+                                <span class="tag-badge tag-gold"><i class="fa-solid fa-fire"></i> Firebase</span>
+                                <span class="tag-badge">Industrial Safety</span>
                             </div>
                         </div>
-                        <div class="research-visual">
-                            <div class="mcp-graphic">
-                                <div class="mcp-core"><i class="fa-solid fa-robot"></i></div>
-                                <div class="mcp-node mn1"><i class="fa-solid fa-server"></i></div>
-                                <div class="mcp-node mn2"><i class="fa-solid fa-shield"></i></div>
-                                <div class="mcp-node mn3"><i class="fa-solid fa-network-wired"></i></div>
-                                <svg class="mcp-lines">
-                                    <line x1="50%" y1="50%" x2="20%" y2="20%" stroke="rgba(6, 182, 212, 0.4)" stroke-width="2" stroke-dasharray="4"/>
-                                    <line x1="50%" y1="50%" x2="80%" y2="20%" stroke="rgba(139, 92, 246, 0.4)" stroke-width="2" stroke-dasharray="4"/>
-                                    <line x1="50%" y1="50%" x2="50%" y2="80%" stroke="rgba(59, 130, 246, 0.4)" stroke-width="2" stroke-dasharray="4"/>
-                                </svg>
+
+                        <!-- AR Visual Representation -->
+                        <div class="fp-visual">
+                            <div class="ar-simulation-box">
+                                <div class="ar-scanner-line"></div>
+                                <div class="ar-core-badge">
+                                    <i class="fa-solid fa-cubes-stacked"></i>
+                                    <span>ARCore Space</span>
+                                </div>
+                                <div class="ar-hazard-marker m1">
+                                    <i class="fa-solid fa-radiation"></i> Hazard Zone
+                                </div>
+                                <div class="ar-hazard-marker m2">
+                                    <i class="fa-solid fa-fire-extinguisher"></i> Safety Protocol
+                                </div>
+                                <div class="ar-qr-badge">
+                                    <i class="fa-solid fa-qrcode"></i> QR Verified
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Academic Projects Grid -->
+                <!-- Projects Grid -->
                 <div class="projects-grid">
-                    <!-- Project 1 -->
-                    <div class="project-card glass-card reveal">
-                        <div class="project-img-placeholder">
+                    <!-- Project 2: Civic Issue Reporting System -->
+                    <div class="project-card glass-card reveal" data-category="civic">
+                        <div class="project-img-placeholder civic-theme">
                             <i class="fa-solid fa-city project-main-icon"></i>
-                            <div class="project-overlay-badge text-blue">SIH 2025 Qualified</div>
+                            <div class="project-overlay-badge text-blue">SIH 2025</div>
                         </div>
                         <div class="project-info">
+                            <div class="project-meta-top">
+                                <span class="proj-category-pill">Civic Platform</span>
+                                <span class="proj-date">SIH 2025</span>
+                            </div>
                             <h3>Civic Issue Reporting System</h3>
-                            <span class="project-subtitle">Smart India Hackathon 2025 (4th Rank College Level)</span>
+                            <span class="project-subtitle">Smart India Hackathon 2025 Platform</span>
                             <p>
-                                A digital platform enabling citizens to report community/civic grievances. Features categorized entry modules, administrative assignment, automated status updates, and tracking pipelines designed for government accountability.
+                                Developed a centralized digital platform empowering citizens to easily report and track community and civic issues with transparency. Streamlines municipal grievance dispatch and status resolution.
                             </p>
                             <div class="project-bullet-details">
-                                <div><i class="fa-solid fa-chevron-right"></i> Secure, anonymous complaint reporting</div>
-                                <div><i class="fa-solid fa-chevron-right"></i> Dynamic category allocation & urgency sorting</div>
-                                <div><i class="fa-solid fa-chevron-right"></i> High scaling cloud-ready database structure</div>
+                                <div><i class="fa-solid fa-circle-check"></i> Structured complaint triage with categorized allocations</div>
+                                <div><i class="fa-solid fa-circle-check"></i> Real-time status tracking pipeline with citizen notifications</div>
+                                <div><i class="fa-solid fa-circle-check"></i> Scalable relational database architecture for query resolution</div>
                             </div>
                             <div class="project-footer">
                                 <div class="project-tags">
                                     <span class="tag-badge">Java</span>
                                     <span class="tag-badge">JavaScript</span>
                                     <span class="tag-badge">SQL</span>
-                                    <span class="tag-badge">CSS Grid</span>
+                                    <span class="tag-badge">HTML5 / CSS3</span>
+                                    <span class="tag-badge">Full-Stack</span>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Project 2 -->
-                    <div class="project-card glass-card reveal">
-                        <div class="project-img-placeholder">
+                    <!-- Project 3: Emotional Adaptive Learning App -->
+                    <div class="project-card glass-card reveal" data-category="accessibility">
+                        <div class="project-img-placeholder accessibility-theme">
                             <i class="fa-solid fa-face-smile-beam project-main-icon"></i>
-                            <div class="project-overlay-badge text-purple">Social Impact</div>
+                            <div class="project-overlay-badge text-purple">UI/UX & Social Impact</div>
                         </div>
                         <div class="project-info">
+                            <div class="project-meta-top">
+                                <span class="proj-category-pill">Inclusive EdTech</span>
+                                <span class="proj-date">Accessibility Dev</span>
+                            </div>
                             <h3>Emotional Adaptive Learning App</h3>
-                            <span class="project-subtitle">Specialized Education for Down Syndrome Students</span>
+                            <span class="project-subtitle">Specialized for Students with Down Syndrome</span>
                             <p>
-                                A personalized adaptive educational application designed with accessibility constraints in mind. Features big touch-targets, dynamic high-contrast UI adjustment, and basic emotion response triggers to modulate learning speed.
+                                Designed an emotion-based assistive learning application tailored for students with Down syndrome. Prioritizes specialized accessibility UI/UX heuristics, large touch targets, and sensory pacing modulation.
                             </p>
                             <div class="project-bullet-details">
-                                <div><i class="fa-solid fa-chevron-right"></i> Focus on large, color-coded accessibility interfaces</div>
-                                <div><i class="fa-solid fa-chevron-right"></i> Real-time adaptive educational modules</div>
-                                <div><i class="fa-solid fa-chevron-right"></i> Gamified sensory reinforcement sounds & triggers</div>
+                                <div><i class="fa-solid fa-circle-check"></i> Emotion-responsive pacing modulating cognitive load</div>
+                                <div><i class="fa-solid fa-circle-check"></i> High-contrast accessible design crafted in Figma</div>
+                                <div><i class="fa-solid fa-circle-check"></i> Positive sensory reinforcement audio & visual milestones</div>
                             </div>
                             <div class="project-footer">
                                 <div class="project-tags">
+                                    <span class="tag-badge tag-purple"><i class="fa-brands fa-figma"></i> Figma UI/UX</span>
                                     <span class="tag-badge">React</span>
-                                    <span class="tag-badge">MongoDB</span>
                                     <span class="tag-badge">Spring Boot</span>
                                     <span class="tag-badge">Node.js</span>
+                                    <span class="tag-badge">Accessibility</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 4: Food Management System -->
+                    <div class="project-card glass-card reveal" data-category="award">
+                        <div class="project-img-placeholder food-theme">
+                            <i class="fa-solid fa-utensils project-main-icon"></i>
+                            <div class="project-overlay-badge text-gold"><i class="fa-solid fa-trophy"></i> Top 5 Teams</div>
+                        </div>
+                        <div class="project-info">
+                            <div class="project-meta-top">
+                                <span class="proj-category-pill">Redistribution Logistics</span>
+                                <span class="proj-date">IAMNEO HackSprint</span>
+                            </div>
+                            <h3>Food Management System</h3>
+                            <span class="project-subtitle">IAMNEO HACKSPRINT Season 2 (Top 5 out of 25 Teams)</span>
+                            <p>
+                                Built an emergency surplus food management and redistribution platform that connects food donors (caterers, restaurants, banquet halls) with local NGOs to rapidly eliminate hunger and reduce food waste.
+                            </p>
+                            <div class="project-bullet-details">
+                                <div><i class="fa-solid fa-circle-check"></i> Proximity-based donor-to-NGO rapid dispatch matching</div>
+                                <div><i class="fa-solid fa-circle-check"></i> Expiration urgency timers and shelf-life prioritization</div>
+                                <div><i class="fa-solid fa-circle-check"></i> Transparent metrics dashboard logging meals rescued</div>
+                            </div>
+                            <div class="project-footer">
+                                <div class="project-tags">
+                                    <span class="tag-badge tag-gold">Top 5 Award</span>
+                                    <span class="tag-badge">Java</span>
+                                    <span class="tag-badge">Spring Boot</span>
+                                    <span class="tag-badge">MySQL</span>
+                                    <span class="tag-badge">REST APIs</span>
                                 </div>
                             </div>
                         </div>
@@ -471,68 +738,105 @@
             </div>
         </section>
 
-        <!-- Achievements Section -->
+        <!-- Key Achievements & Research Milestones -->
         <section id="achievements" class="section achievements-section">
             <div class="container">
                 <div class="section-header reveal">
                     <span class="section-tag">Milestones</span>
-                    <h2 class="section-title">Key Achievements</h2>
+                    <h2 class="section-title">Key Achievements & Publications</h2>
                     <div class="section-line"></div>
+                    <p class="section-subtitle">Demonstrated innovation across national patents, peer-reviewed international scientific publication, and national hackathons.</p>
                 </div>
 
-                <!-- Timeline -->
+                <!-- Showcase Cards for Patent & Springer Nature -->
+                <div class="achievement-spotlight-grid">
+                    <!-- Patent Card -->
+                    <div class="spotlight-card patent-card glass-card reveal">
+                        <div class="spotlight-badge-row">
+                            <span class="spotlight-badge badge-patent">
+                                <i class="fa-solid fa-certificate"></i> PUBLISHED INDIAN PATENT
+                            </span>
+                            <span class="spotlight-tag">Co-Inventor</span>
+                        </div>
+                        <h3 class="spotlight-title">A Compact Multi-Sensor Propulsion-Assisted Diagnostic Probe for Pre-Entry Hazard Detection and Blockage Identification in Underground Sewer Systems</h3>
+                        <p class="spotlight-desc">
+                            Co-inventor of an innovative diagnostic probe engineered with propulsion assistance and multi-sensor telemetry. Designed to detect toxic gases, structural blockages, and hazardous anomalies prior to human worker entry into underground sewer lines—significantly reducing fatal occupational hazards.
+                        </p>
+                        
+                        <!-- Sensor highlights -->
+                        <div class="patent-sensors-grid">
+                            <div class="sensor-pill"><i class="fa-solid fa-smog"></i> Toxic Gas Detection</div>
+                            <div class="sensor-pill"><i class="fa-solid fa-arrows-to-dot"></i> Blockage Sonar/Lidar</div>
+                            <div class="sensor-pill"><i class="fa-solid fa-jet-fighter-up"></i> Propulsion Assistance</div>
+                            <div class="sensor-pill"><i class="fa-solid fa-tower-broadcast"></i> Pre-Entry Telemetry</div>
+                        </div>
+
+                        <div class="spotlight-footer">
+                            <div class="patent-authority">
+                                <i class="fa-solid fa-scale-balanced"></i> Indian Patent Office Published
+                            </div>
+                            <button class="btn btn-secondary btn-sm" onclick="copyCitation('Patent: A Compact Multi-Sensor Propulsion-Assisted Diagnostic Probe for Pre-Entry Hazard Detection and Blockage Identification in Underground Sewer Systems', 'Patent details copied!')">
+                                <i class="fa-regular fa-copy"></i> Copy Citation
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Springer Nature Research Publication Card -->
+                    <div class="spotlight-card publication-card glass-card reveal">
+                        <div class="spotlight-badge-row">
+                            <span class="spotlight-badge badge-springer">
+                                <i class="fa-solid fa-book-journal-whills"></i> SPRINGER NATURE
+                            </span>
+                            <span class="spotlight-tag">Published Research Paper</span>
+                        </div>
+                        <h3 class="spotlight-title">Healthcare Treatment Optimization</h3>
+                        <p class="spotlight-subtitle">Published in Springer Nature • Data-Driven & Analytical Methods</p>
+                        <p class="spotlight-desc">
+                            Authored and published research in <strong>Springer Nature</strong> investigating statistical and analytical approaches for optimizing healthcare treatment methodologies. Utilized data cleaning, predictive modeling, and treatment outcome metrics to evaluate patient recovery trajectories and improve clinical efficiencies.
+                        </p>
+
+                        <div class="paper-methodology-tags">
+                            <span class="method-tag"><i class="fa-solid fa-chart-pie"></i> Data-Driven Analytics</span>
+                            <span class="method-tag"><i class="fa-solid fa-database"></i> Healthcare Data Preprocessing</span>
+                            <span class="method-tag"><i class="fa-solid fa-sliders"></i> Treatment Optimization Modeling</span>
+                            <span class="method-tag"><i class="fa-solid fa-square-poll-vertical"></i> Statistical Validation</span>
+                        </div>
+
+                        <div class="spotlight-footer">
+                            <div class="publication-badge">
+                                <i class="fa-solid fa-feather-pointed"></i> Springer Nature Publications
+                            </div>
+                            <button class="btn btn-secondary btn-sm" onclick="copyCitation('Springer Nature: Healthcare Treatment Optimization, focusing on data-driven approaches and analytical methods.', 'Publication citation copied!')">
+                                <i class="fa-regular fa-copy"></i> Copy Citation
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline for Hackathon Milestones -->
                 <div class="timeline">
-                    <!-- Patent -->
+                    <!-- SIH 2026 -->
                     <div class="timeline-item left reveal">
-                        <div class="timeline-badge"><i class="fa-solid fa-lightbulb"></i></div>
+                        <div class="timeline-badge"><i class="fa-solid fa-flag-checkered"></i></div>
                         <div class="timeline-panel glass-card">
-                            <span class="timeline-date">Co-Inventor</span>
-                            <h3>Published Indian Patent</h3>
-                            <p class="timeline-subtitle">Pre-Entry Hazard Detection & Blockage Identification</p>
+                            <span class="timeline-date">Smart India Hackathon 2026</span>
+                            <h3>National Finals Qualification</h3>
+                            <p class="timeline-subtitle">7th Place at College Level (SKCET)</p>
                             <p class="timeline-body">
-                                <strong>Patent Title:</strong> "A Compact Multi-Sensor Propulsion-Assisted Diagnostic Probe for Pre-Entry Hazard Detection and Blockage Identification in Underground Sewer Systems".
-                            </p>
-                            <p class="timeline-body-sec">
-                                Designed a diagnostic probe with multi-sensor components to identify blockages and gases prior to workers entering underground sewer systems, lowering toxic exposure risks.
+                                Qualified for the national finals of India's most prestigious hackathon, SIH 2026, pitching <strong>Hi-AR Industrial Safety Training</strong>. Selected among competitive internal hackathon rounds through rigorous jury evaluations.
                             </p>
                         </div>
                     </div>
 
-                    <!-- Research Paper -->
-                    <div class="timeline-item right reveal">
-                        <div class="timeline-badge"><i class="fa-solid fa-book"></i></div>
-                        <div class="timeline-panel glass-card">
-                            <span class="timeline-date">Research Publication</span>
-                            <h3>HealthCare Treatment Optimization</h3>
-                            <p class="timeline-subtitle">Published Research Paper</p>
-                            <p class="timeline-body">
-                                Developed statistical, analytical methodologies targeted at analyzing health datasets. Structured algorithms that calculate treatment optimization scores, suggesting cost-effective medical procedures.
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- SIH -->
-                    <div class="timeline-item left reveal">
-                        <div class="timeline-badge"><i class="fa-solid fa-ranking-star"></i></div>
-                        <div class="timeline-panel glass-card">
-                            <span class="timeline-date">Smart India Hackathon 2025</span>
-                            <h3>4th Place College Level Qualification</h3>
-                            <p class="timeline-subtitle">Qualified for Finals</p>
-                            <p class="timeline-body">
-                                Managed and pitched a civic application to represent SKCET at the national Smart India Hackathon. Validated operational architectures for civic grievances under evaluation panels.
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- IAMNEO -->
+                    <!-- IAMNEO HackSprint Season 2 -->
                     <div class="timeline-item right reveal">
                         <div class="timeline-badge"><i class="fa-solid fa-trophy"></i></div>
                         <div class="timeline-panel glass-card">
-                            <span class="timeline-date">IAMNEO HackSprint Season 2</span>
+                            <span class="timeline-date">IAMNEO HACKSPRINT Season 2</span>
                             <h3>Top 5 Project Out of 25 Teams</h3>
                             <p class="timeline-subtitle">Food Management System</p>
                             <p class="timeline-body">
-                                Built an emergency food redistribution tracker connecting food donors (restaurants, events) directly with local NGOs. Developed core algorithms for distance matching.
+                                Ranked in the top 5 teams out of 25 competing teams in IAMNEO HackSprint Season 2 for designing and building an automated food redistribution platform connecting surplus donors to NGOs.
                             </p>
                         </div>
                     </div>
@@ -540,109 +844,111 @@
             </div>
         </section>
 
-        <!-- Certifications Section -->
+        <!-- Certifications & Activities Section -->
         <section id="certifications" class="section certifications-section">
             <div class="container">
                 <div class="section-header reveal">
-                    <span class="section-tag">Badges</span>
-                    <h2 class="section-title">Certifications & Accreditations</h2>
+                    <span class="section-tag">Accreditations</span>
+                    <h2 class="section-title">Certifications & Activities</h2>
                     <div class="section-line"></div>
+                    <p class="section-subtitle">Verified professional credentials in Cybersecurity, Design Thinking, Cloud, and AI.</p>
                 </div>
 
                 <div class="certs-grid">
                     <!-- Google Cybersecurity -->
                     <div class="cert-card glass-card reveal">
-                        <div class="cert-icon-wrapper text-blue"><i class="fa-solid fa-shield-halved"></i></div>
-                        <h3>Foundation of Google Cybersecurity</h3>
-                        <p class="cert-provider">Coursera / Google</p>
-                        <p class="cert-desc">Core training in security frameworks, network safety, Linux command-line, SQL, and threat remediation.</p>
+                        <div class="cert-header-row">
+                            <div class="cert-icon-wrapper text-blue"><i class="fa-solid fa-shield-halved"></i></div>
+                            <span class="cert-platform">Coursera</span>
+                        </div>
+                        <h3>Google Cybersecurity</h3>
+                        <p class="cert-provider">Google Professional Certificate</p>
+                        <p class="cert-desc">
+                            Foundations of defensive cybersecurity, network architecture safety, SIEM tools, Linux command line mastery, SQL queries, and incident remediation protocols.
+                        </p>
+                    </div>
+
+                    <!-- Deloitte Cyber Job Simulation -->
+                    <div class="cert-card glass-card highlight-cert reveal">
+                        <div class="cert-header-row">
+                            <div class="cert-icon-wrapper text-green"><i class="fa-solid fa-building-shield"></i></div>
+                            <span class="cert-platform badge-deloitte">Forage • Oct 2025</span>
+                        </div>
+                        <h3>Deloitte Cyber Job Simulation</h3>
+                        <p class="cert-provider">Deloitte Advisory / Forage</p>
+                        <p class="cert-desc">
+                            Completed practical virtual simulation covering enterprise incident triage, threat forensics, security risk assessments, and executive stakeholder security briefings.
+                        </p>
                     </div>
 
                     <!-- NPTEL Design Thinking -->
                     <div class="cert-card glass-card reveal">
-                        <div class="cert-icon-wrapper text-cyan"><i class="fa-solid fa-gears"></i></div>
-                        <h3>NPTEL - Design Thinking: A Primer</h3>
+                        <div class="cert-header-row">
+                            <div class="cert-icon-wrapper text-gold"><i class="fa-solid fa-pen-ruler"></i></div>
+                            <div class="cert-badge-row">
+                                <span class="badge-tag silver">Silver</span>
+                                <span class="badge-tag elite">Elite</span>
+                            </div>
+                        </div>
+                        <h3>Design Thinking: A Primer</h3>
                         <p class="cert-provider">NPTEL / IIT Madras</p>
-                        <div class="cert-badge-row">
-                            <span class="badge-tag silver">Silver</span>
-                            <span class="badge-tag elite">Elite</span>
+                        <p class="cert-desc">
+                            Elite + Silver honors credential in human-centered design frameworks, empathy mapping, rapid prototyping, and iterative user testing methodologies.
+                        </p>
+                    </div>
+
+                    <!-- NPTEL Cyber Security and Privacy -->
+                    <div class="cert-card glass-card reveal">
+                        <div class="cert-header-row">
+                            <div class="cert-icon-wrapper text-purple"><i class="fa-solid fa-lock"></i></div>
+                            <span class="cert-platform">NPTEL</span>
                         </div>
-                        <p class="cert-desc">Academic certification in customer empathy mapping, prototyping, and iterative development practices.</p>
+                        <h3>Cyber Security and Privacy</h3>
+                        <p class="cert-provider">NPTEL Online Course</p>
+                        <p class="cert-desc">
+                            Academic certification exploring symmetric/asymmetric cryptography, network defense protocols, access control matrices, authentication, and data privacy safeguards.
+                        </p>
                     </div>
 
-                    <!-- NPTEL Cyber -->
+                    <!-- NPTEL Cloud Computing -->
                     <div class="cert-card glass-card reveal">
-                        <div class="cert-icon-wrapper text-purple"><i class="fa-solid fa-lock"></i></div>
-                        <h3>NPTEL - Cyber Security and Privacy</h3>
-                        <p class="cert-provider">NPTEL</p>
-                        <p class="cert-desc">Rigorous coursework testing networks, cryptography, identity management, database safety, and privacy policies.</p>
-                    </div>
-
-                    <!-- NPTEL Cloud -->
-                    <div class="cert-card glass-card reveal">
-                        <div class="cert-icon-wrapper text-green"><i class="fa-solid fa-cloud"></i></div>
-                        <h3>NPTEL - Cloud Computing</h3>
-                        <p class="cert-provider">NPTEL</p>
-                        <div class="cert-badge-row">
-                            <span class="badge-tag silver">Silver</span>
-                            <span class="badge-tag elite">Elite</span>
+                        <div class="cert-header-row">
+                            <div class="cert-icon-wrapper text-cyan"><i class="fa-solid fa-cloud"></i></div>
+                            <div class="cert-badge-row">
+                                <span class="badge-tag silver">Silver</span>
+                                <span class="badge-tag elite">Elite</span>
+                            </div>
                         </div>
-                        <p class="cert-desc">Comprehensive analysis of distributed architectures, SaaS/PaaS/IaaS setups, virtualization, and scalability.</p>
+                        <h3>Cloud Computing</h3>
+                        <p class="cert-provider">NPTEL / IIT Kharagpur</p>
+                        <p class="cert-desc">
+                            Elite + Silver certification examining cloud virtualization, SaaS/PaaS/IaaS delivery, containerization, distributed storage, and elastic resource scaling.
+                        </p>
                     </div>
 
-                    <!-- AI Coursera -->
+                    <!-- Introduction to AI -->
                     <div class="cert-card glass-card reveal">
-                        <div class="cert-icon-wrapper text-blue"><i class="fa-solid fa-network-wired"></i></div>
-                        <h3>Introduction to Artificial Intelligence</h3>
+                        <div class="cert-header-row">
+                            <div class="cert-icon-wrapper text-blue"><i class="fa-solid fa-robot"></i></div>
+                            <span class="cert-platform">Coursera</span>
+                        </div>
+                        <h3>Introduction to AI</h3>
                         <p class="cert-provider">Coursera</p>
-                        <p class="cert-desc">Foundations of machine learning model definitions, neural networks, ethics in AI, and natural language interfaces.</p>
+                        <p class="cert-desc">
+                            Foundational artificial intelligence principles, machine learning concepts, neural network architectures, and ethical AI development frameworks.
+                        </p>
                     </div>
 
-                    <!-- ServiceNow -->
+                    <!-- ServiceNow Micro-Certification -->
                     <div class="cert-card glass-card reveal">
-                        <div class="cert-icon-wrapper text-purple"><i class="fa-solid fa-bolt"></i></div>
-                        <h3>Micro-Certification</h3>
-                        <p class="cert-provider">ServiceNow</p>
-                        <p class="cert-desc">Micro-credential verifying execution flow creation, user request routing setups, and custom service catalog workflows.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Experience & Leadership Section -->
-        <section class="section experience-section">
-            <div class="container">
-                <div class="section-header reveal">
-                    <span class="section-tag">Involvement</span>
-                    <h2 class="section-title">Leadership & Campus Life</h2>
-                    <div class="section-line"></div>
-                </div>
-
-                <div class="experience-grid">
-                    <div class="experience-card glass-card reveal">
-                        <div class="exp-icon"><i class="fa-solid fa-sitemap"></i></div>
-                        <h3>Executive Member</h3>
-                        <p class="exp-sub">Cyber Security Department, SKCET</p>
-                        <p>
-                            Organize department activities, cyber literacy workshops, and technical webinars. Actively help design Capture The Flag (CTF) challenges and curate resource materials for juniors.
-                        </p>
-                    </div>
-
-                    <div class="experience-card glass-card reveal">
-                        <div class="exp-icon"><i class="fa-solid fa-laptop-code"></i></div>
-                        <h3>Hackathon Competitor</h3>
-                        <p class="exp-sub">Collaborative Problem Solving</p>
-                        <p>
-                            Participated in multiple hackathons including IAMNEO HackSprint and Smart India Hackathon. Focus on wireframing fast prototypes and connecting backends under compressed timelines.
-                        </p>
-                    </div>
-
-                    <div class="experience-card glass-card reveal">
-                        <div class="exp-icon"><i class="fa-solid fa-graduation-cap"></i></div>
-                        <h3>Technical Learner</h3>
-                        <p class="exp-sub">Continuous Skill Expansion</p>
-                        <p>
-                            Dedicating self-study hours to master OWASP Top 10 vulnerabilities, containerized environments, secure API setups, and reactive frontends.
+                        <div class="cert-header-row">
+                            <div class="cert-icon-wrapper text-green"><i class="fa-solid fa-bolt"></i></div>
+                            <span class="cert-platform">ServiceNow</span>
+                        </div>
+                        <h3>ServiceNow Micro-Certification</h3>
+                        <p class="cert-provider">ServiceNow Credentials</p>
+                        <p class="cert-desc">
+                            Micro-certification validating IT service management, business rule automation, custom service catalog design, and enterprise workflow orchestration.
                         </p>
                     </div>
                 </div>
@@ -653,72 +959,85 @@
         <section id="contact" class="section contact-section">
             <div class="container">
                 <div class="section-header reveal">
-                    <span class="section-tag">Get In Touch</span>
-                    <h2 class="section-title">Contact Information</h2>
+                    <span class="section-tag">Connect</span>
+                    <h2 class="section-title">Get In Touch</h2>
                     <div class="section-line"></div>
+                    <p class="section-subtitle">Interested in internships, cybersecurity initiatives, UI/UX design collaboration, or research? Let's talk!</p>
                 </div>
 
                 <div class="contact-grid">
+                    <!-- Contact Cards -->
                     <div class="contact-info reveal">
                         <h3>Let's Collaborate</h3>
                         <p>
-                            I am open to summer internships, secure software engineering opportunities, cybersecurity analyst positions, and academic research collaborations. Drop me a line!
+                            I welcome opportunities for internships, secure software development, UI/UX design, and research collaborations. Feel free to contact me directly or leave a message.
                         </p>
 
                         <div class="contact-details">
                             <div class="contact-item">
-                                <i class="fa-solid fa-envelope contact-icon"></i>
-                                <div>
+                                <div class="contact-icon text-cyan"><i class="fa-solid fa-envelope"></i></div>
+                                <div class="contact-text-wrap">
                                     <h4>Email</h4>
                                     <p><a href="mailto:spaathilakshmi@gmail.com" class="contact-link">spaathilakshmi@gmail.com</a></p>
                                 </div>
+                                <button class="copy-pill-btn" onclick="copyContact('spaathilakshmi@gmail.com', 'Email copied to clipboard!')" title="Copy Email">
+                                    <i class="fa-regular fa-copy"></i>
+                                </button>
                             </div>
+
                             <div class="contact-item">
-                                <i class="fa-solid fa-phone contact-icon"></i>
-                                <div>
+                                <div class="contact-icon text-blue"><i class="fa-solid fa-phone"></i></div>
+                                <div class="contact-text-wrap">
                                     <h4>Phone</h4>
                                     <p><a href="tel:+916380142486" class="contact-link">+91 63801 42486</a></p>
                                 </div>
+                                <button class="copy-pill-btn" onclick="copyContact('+916380142486', 'Phone number copied!')" title="Copy Phone">
+                                    <i class="fa-regular fa-copy"></i>
+                                </button>
                             </div>
-                            <div class="contact-item">
-                                <i class="fa-brands fa-linkedin contact-icon"></i>
-                                <div>
-                                    <h4>LinkedIn</h4>
-                                    <p><a href="https://linkedin.com/in/aathilakshmi-s-p-054343327" target="_blank" rel="noopener" class="contact-link">linkedin.com/in/aathilakshmi-s-p-054343327</a></p>
-                                </div>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fa-brands fa-github contact-icon"></i>
-                                <div>
-                                    <h4>GitHub</h4>
-                                    <p><a href="https://github.com/Aathi-007" target="_blank" rel="noopener" class="contact-link">github.com/Aathi-007</a></p>
-                                </div>
-                            </div>
-                        </div>
 
-                        <!-- Reference Highlight -->
-                        <div class="reference-box glass-card">
-                            <h4>Academic Reference</h4>
-                            <p class="ref-name">Dr. J Regina Parvin</p>
-                            <p class="ref-title">HOD, Cyber Security Department</p>
-                            <p class="ref-org">SKCET, Coimbatore</p>
-                            <div class="ref-contact">
-                                <span><i class="fa-solid fa-envelope"></i> rejinaparvinj@skcet.ac.in</span>
-                                <span><i class="fa-solid fa-phone"></i> +91 96007 30033</span>
+                            <div class="contact-item">
+                                <div class="contact-icon text-purple"><i class="fa-brands fa-linkedin-in"></i></div>
+                                <div class="contact-text-wrap">
+                                    <h4>LinkedIn</h4>
+                                    <p><a href="https://linkedin.com/in/aathilakshmi-s-p-054343327" target="_blank" rel="noopener noreferrer" class="contact-link">linkedin.com/in/aathilakshmi-s-p-054343327</a></p>
+                                </div>
+                                <a href="https://linkedin.com/in/aathilakshmi-s-p-054343327" target="_blank" rel="noopener noreferrer" class="external-pill-btn" title="Open LinkedIn">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                </a>
+                            </div>
+
+                            <div class="contact-item">
+                                <div class="contact-icon text-green"><i class="fa-brands fa-github"></i></div>
+                                <div class="contact-text-wrap">
+                                    <h4>GitHub</h4>
+                                    <p><a href="https://github.com/Aathi-007" target="_blank" rel="noopener noreferrer" class="contact-link">github.com/Aathi-007</a></p>
+                                </div>
+                                <a href="https://github.com/Aathi-007" target="_blank" rel="noopener noreferrer" class="external-pill-btn" title="Open GitHub">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                </a>
+                            </div>
+
+                            <div class="contact-item">
+                                <div class="contact-icon text-gold"><i class="fa-solid fa-location-dot"></i></div>
+                                <div class="contact-text-wrap">
+                                    <h4>Location</h4>
+                                    <p class="contact-plain-text">Chennai, Tamil Nadu, India</p>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Contact Form -->
+                    <!-- Interactive Contact Form -->
                     <div class="contact-form-container glass-card reveal">
                         <h3>Send A Message</h3>
                         <form id="contact-form" class="contact-form" onsubmit="handleFormSubmit(event)">
                             <div class="form-group">
-                                <input type="text" id="form-name" required placeholder=" ">
+                                <input type="text" id="form-name" required placeholder=" " autocomplete="name">
                                 <label for="form-name">Full Name</label>
                             </div>
                             <div class="form-group">
-                                <input type="email" id="form-email" required placeholder=" ">
+                                <input type="email" id="form-email" required placeholder=" " autocomplete="email">
                                 <label for="form-email">Email Address</label>
                             </div>
                             <div class="form-group">
@@ -744,154 +1063,145 @@
     <footer class="footer">
         <div class="container footer-container">
             <div class="footer-left">
-                <a href="#" class="logo footer-logo">
+                <a href="#hero" class="logo footer-logo">
                     <span class="logo-accent">&lt;</span>AATHI<span class="logo-accent">.CYS /&gt;</span>
                 </a>
                 <p class="declaration-text">
-                    <strong>Declaration:</strong> I hereby declare that the information provided above is true and accurate to the best of my knowledge. I take full responsibility for the authenticity of the details mentioned.
+                    <strong>Aathilakshmi S P</strong> • Computer Science & Engineering (Cyber Security) • SKCET, Coimbatore.
+                    Passionate about secure architectures, intuitive UI/UX design, and research-backed software solutions.
                 </p>
             </div>
             
             <div class="footer-right">
                 <div class="footer-links">
-                    <a href="https://github.com/Aathi-007" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-                    <a href="https://linkedin.com/in/aathilakshmi-s-p-054343327" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://github.com/Aathi-007" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://linkedin.com/in/aathilakshmi-s-p-054343327" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
                     <a href="mailto:spaathilakshmi@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+                    <button onclick="openResumeModal()" aria-label="View Resume" class="footer-resume-btn"><i class="fa-solid fa-file-pdf"></i></button>
                 </div>
-                <p class="copyright">&copy; 2026 Aathilakshmi S P. Designed with precision & security.</p>
+                <p class="copyright">&copy; 2026 Aathilakshmi S P. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Print / Resume Preview Modal -->
-    <div id="resume-modal" class="modal">
+    <!-- Interactive Resume Preview & Printable Modal -->
+    <div id="resume-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="resume-modal-title">
         <div class="modal-content glass-card">
             <div class="modal-header">
-                <h3>Aathilakshmi S P — Resume Preview</h3>
-                <span class="close-modal" onclick="closeResumeModal()">&times;</span>
+                <div class="modal-title-row">
+                    <i class="fa-regular fa-file-lines text-cyan"></i>
+                    <h3 id="resume-modal-title">AATHILAKSHMI S P — Curriculum Vitae</h3>
+                </div>
+                <span class="close-modal" onclick="closeResumeModal()" aria-label="Close Modal">&times;</span>
             </div>
             <div class="modal-body-wrapper" id="printable-resume">
-                <!-- High-fidelity Resume layout inside the modal -->
+                <!-- High-fidelity 1-to-1 Resume layout matching the original resume -->
                 <div class="resume-sheet">
                     <div class="resume-header">
                         <h1>AATHILAKSHMI S P</h1>
-                        <p class="resume-meta">Chennai, Tamil Nadu | +91 63801 42486 | spaathilakshmi@gmail.com</p>
+                        <p class="resume-role-sub">Computer Science & Engineering | Cyber Security</p>
+                        <p class="resume-meta">6380142486 • spaathilakshmi@gmail.com • Chennai, Tamil Nadu</p>
                         <p class="resume-links">
-                            LinkedIn: linkedin.com/in/aathilakshmi-s-p-054343327 | GitHub: github.com/Aathi-007
+                            LinkedIn: <a href="https://linkedin.com/in/aathilakshmi-s-p-054343327" target="_blank">linkedin.com/in/aathilakshmi-s-p-054343327</a> | 
+                            GitHub: <a href="https://github.com/Aathi-007" target="_blank">github.com/Aathi-007</a>
                         </p>
                     </div>
 
                     <div class="resume-sec">
-                        <h2 class="resume-sec-title">PROFESSIONAL SUMMARY</h2>
+                        <h2 class="resume-sec-title">ABOUT ME:</h2>
                         <div class="resume-line-divider"></div>
                         <p>
-                            Third-year Computer Science and Engineering (Cyber Security) student at SKCET, Coimbatore, with a strong interest in Cyber Security, Full-Stack Development, and Software Engineering. Experienced in developing real-world applications, participating in hackathons, and contributing to research-driven projects. Continuously strengthening programming, problem-solving, and secure software development skills through hands-on learning and technical challenges.
+                            Third-year Computer Science and Engineering (Cyber Security) student at SKCET, with interests in Cybersecurity, UI/UX design and full-stack development. Focused on creating user-centered digital experiences and developing practical solutions through hands-on projects, continuous learning, and problem-solving.
                         </p>
                     </div>
 
                     <div class="resume-sec">
-                        <h2 class="resume-sec-title">EDUCATIONAL QUALIFICATION</h2>
+                        <h2 class="resume-sec-title">EDUCATION:</h2>
                         <div class="resume-line-divider"></div>
                         <div class="resume-edu-item">
                             <div class="item-header">
-                                <strong>Bachelor of Engineering (BE) in Computer Science and Engineering (Cyber Security)</strong>
-                                <span>2024 – 2028</span>
+                                <strong>B.E. – Computer Science and Engineering (Cyber Security)</strong>
+                                <span>Expected 2028</span>
                             </div>
-                            <div class="item-sub">Sri Krishna College Of Engineering And Technology (SKCET), Coimbatore | <strong>CGPA: 8.79</strong></div>
-                            <p class="resume-subjects"><strong>Key Subjects:</strong> Cyber Security, Machine Learning, Cloud Computing, SQL and Database Management, Statistics and Probability, Data Cleaning and Preprocessing</p>
+                            <div class="item-sub">Sri Krishna College of Engineering and Technology (SKCET), Coimbatore</div>
+                            <p class="resume-subjects">
+                                <strong>CGPA: 8.79</strong> | Relevant subjects: Cyber Security, Machine Learning, Cloud Computing, SQL & Database Management, Statistics and Data Preprocessing
+                            </p>
                         </div>
                     </div>
 
                     <div class="resume-sec">
-                        <h2 class="resume-sec-title">TECHNICAL SKILLS</h2>
-                        <div class="resume-line-divider"></div>
-                        <ul class="resume-skills-list">
-                            <li><strong>Programming & Dev:</strong> Java, Python, JavaScript, SQL, HTML, CSS, React, Spring Boot</li>
-                            <li><strong>Cyber Security:</strong> Kali Linux, Wireshark, Nmap, Burp Suite, OWASP Top 10</li>
-                            <li><strong>Databases & Tools:</strong> MySQL, MongoDB, Git, GitHub, Linux, VS Code</li>
-                            <li><strong>Methodologies:</strong> Design thinking and logical problem-solving, research and technical documentation</li>
-                        </ul>
-                    </div>
-
-                    <div class="resume-sec">
-                        <h2 class="resume-sec-title">ACADEMIC PROJECTS & RESEARCH</h2>
+                        <h2 class="resume-sec-title">PROJECTS:</h2>
                         <div class="resume-line-divider"></div>
                         
                         <div class="resume-proj-item">
                             <div class="item-header">
-                                <strong>Currently Working On: "Dynamic Trust Evaluation Framework for Detecting Malicious MCP Servers Using AI"</strong>
-                                <span>Research</span>
+                                <strong>• Hi-AR – Industrial Safety Training | SIH 2026</strong>
                             </div>
-                            <p>Formulating an AI-powered validation matrix evaluating Model Context Protocol (MCP) server executions. Integrating neural safety classification for risk mitigation.</p>
+                            <p>Developing an AR-based safety training application featuring hazard simulations, offline support, and QR-based certificate verification. Tech: Unity, C#, ARCore, Firebase.</p>
                         </div>
 
                         <div class="resume-proj-item">
                             <div class="item-header">
-                                <strong>Project 1: Civic Issue Reporting System (Smart India Hackathon 2025 – College Qualified)</strong>
-                                <span>SIH 2025</span>
+                                <strong>• Civic Issue Reporting System | SIH 2025</strong>
                             </div>
-                            <p>Developed a digital platform for citizens to report and track civic issues. Designed modules for complaint submission, category allocation, and status tracking. Scalable, secure architecture.</p>
+                            <p>Developed a platform to report and track civic issues.</p>
                         </div>
 
                         <div class="resume-proj-item">
                             <div class="item-header">
-                                <strong>Project 2: Emotional Adaptive Learning App (For Down Syndrome Students)</strong>
-                                <span>Accessibility Dev</span>
+                                <strong>• Emotional Adaptive Learning App</strong>
                             </div>
-                            <p>Developed a personalized learning platform adjusting UI features and pace based on emotion-adaptive vectors. Focus on accessibility rules.</p>
+                            <p>Designed an emotion-based learning application for students with Down syndrome.</p>
+                        </div>
+
+                        <div class="resume-proj-item">
+                            <div class="item-header">
+                                <strong>• Food Management System</strong>
+                            </div>
+                            <p>Ranked among the top 5 teams out of 25 at IAMNEO HACKSPRINT Season 2.</p>
                         </div>
                     </div>
 
                     <div class="resume-sec">
-                        <h2 class="resume-sec-title">ACHIEVEMENTS</h2>
+                        <h2 class="resume-sec-title">ACHIEVEMENTS:</h2>
                         <div class="resume-line-divider"></div>
                         <ul class="resume-bullets">
-                            <li><strong>Co-Inventor of Published Indian Patent:</strong> "A Compact Multi-Sensor Propulsion-Assisted Diagnostic Probe for Pre-Entry Hazard Detection and Blockage Identification in Underground Sewer Systems".</li>
-                            <li><strong>Published Research Paper:</strong> "HealthCare Treatment Optimization" - focused on optimizing healthcare treatments using data-driven and analytical approaches.</li>
-                            <li><strong>Smart India Hackathon 2025 Qualification:</strong> Secured 4th place at college level to enter national evaluation.</li>
-                            <li><strong>IAMNEO HackSprint Season 2:</strong> Top 5 project out of 25 competing teams in developing Food Management redistribution software.</li>
+                            <li>Co-inventor of a published Indian patent: “A Compact Multi-Sensor Propulsion-Assisted Diagnostic Probe for Pre-Entry Hazard Detection and Blockage Identification in Underground Sewer Systems.”</li>
+                            <li>Published a research paper in Springer Nature on Healthcare Treatment Optimization, focusing on data-driven approaches and analytical methods.</li>
+                            <li>Qualified for Smart India Hackathon 2026 finals after securing 7th place at college level.</li>
                         </ul>
                     </div>
 
                     <div class="resume-sec">
-                        <h2 class="resume-sec-title">CERTIFICATES & EXTRA-CURRICULAR</h2>
+                        <h2 class="resume-sec-title">TECHNICAL SKILLS:</h2>
                         <div class="resume-line-divider"></div>
-                        <p class="resume-certs">
-                            Google Cybersecurity Professional Certificate (Coursera) | NPTEL Design Thinking (Elite + Silver) | NPTEL Cyber Security and Privacy | NPTEL Cloud Computing (Elite + Silver) | Intro to AI (Coursera) | ServiceNow Micro-Certification.
-                        </p>
-                        <p class="resume-certs-sec">
-                            <strong>Activities:</strong> Executive Member, Cyber Security Dept (SKCET) | Hackathon competitor | Community support projects.
-                        </p>
+                        <ul class="resume-skills-list">
+                            <li><strong>• Programming & Development:</strong> Java, Python, JavaScript, SQL, HTML, CSS, React, Spring Boot | <strong>Cybersecurity:</strong> Kali Linux, Wireshark, Nmap, Burp Suite, OWASP Top 10</li>
+                            <li><strong>• Databases & Tools:</strong> MySQL, Git, GitHub, Figma, Linux, VS Code | <strong>Core strengths:</strong> Logical problem-solving, design thinking, research, technical documentation</li>
+                        </ul>
                     </div>
 
                     <div class="resume-sec">
-                        <div class="resume-split-row">
-                            <div>
-                                <h2 class="resume-sec-title">LANGUAGES & HOBBIES</h2>
-                                <div class="resume-line-divider"></div>
-                                <p><strong>Languages:</strong> Tamil (Native), English (Fluent), Hindi (Conversational), Telugu (Conversational)</p>
-                                <p><strong>Hobbies:</strong> Coding problems, Badminton, creative handcrafts, logical puzzle solving.</p>
-                            </div>
-                            <div>
-                                <h2 class="resume-sec-title">REFERENCES</h2>
-                                <div class="resume-line-divider"></div>
-                                <p><strong>Dr. J Regina Parvin</strong> - HOD, CYS Dept, SKCET</p>
-                                <p>Email: rejinaparvinj@skcet.ac.in | Tel: 9600730033</p>
-                            </div>
-                        </div>
+                        <h2 class="resume-sec-title">CERTIFICATIONS & ACTIVITIES:</h2>
+                        <div class="resume-line-divider"></div>
+                        <ul class="resume-bullets">
+                            <li>Google Cybersecurity (Coursera)</li>
+                            <li>Deloitte Cyber Job Simulation (Forage, Oct 2025)</li>
+                            <li>NPTEL Design Thinking: A Primer (Elite + Silver) • NPTEL Cyber Security and Privacy • NPTEL Cloud Computing (Elite + Silver)</li>
+                            <li>Introduction to AI (Coursera)</li>
+                            <li>ServiceNow Micro-Certification</li>
+                        </ul>
                     </div>
 
-                    <div class="resume-footer">
-                        <p class="resume-declaration"><strong>Declaration:</strong> I hereby declare that the information provided above is true and accurate to the best of my knowledge.</p>
-                        <div class="resume-signature-block">
-                            <span>Aathilakshmi S P</span>
-                        </div>
+                    <div class="resume-sec resume-languages-sec">
+                        <p><strong>Languages:</strong> Tamil (Native), English (Fluent), Hindi and Telugu (Conversational).</p>
                     </div>
                 </div>
             </div>
             <div class="modal-footer">
                 <button class="btn btn-secondary" onclick="closeResumeModal()">Close</button>
-                <button class="btn btn-primary" onclick="printResume()"><i class="fa-solid fa-print"></i> Print / Save PDF</button>
+                <button class="btn btn-primary" onclick="printResume()"><i class="fa-solid fa-print"></i> Print / Save as PDF</button>
             </div>
         </div>
     </div>
