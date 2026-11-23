@@ -1,9 +1,9 @@
 // Wait for the DOM to load
 document.addEventListener('DOMContentLoaded', () => {
 
-    /* ==========================================
+    /* ==========================================================================
        MOBILE NAVIGATION MENU
-       ========================================== */
+       ========================================================================== */
     const mobileToggle = document.getElementById('mobile-toggle');
     const navMenu = document.getElementById('nav-menu');
     const navLinks = document.querySelectorAll('.nav-link');
@@ -33,9 +33,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
-    /* ==========================================
-       SCROLL INDICATOR & HEADER STYLE
-       ========================================== */
+    /* ==========================================================================
+       SCROLL INDICATOR & GLASSMORPHISM HEADER
+       ========================================================================== */
     const scrollProgress = document.getElementById('scroll-progress');
     const header = document.querySelector('.header');
 
@@ -44,24 +44,33 @@ document.addEventListener('DOMContentLoaded', () => {
         const totalScroll = document.documentElement.scrollHeight - window.innerHeight;
         if (totalScroll > 0) {
             const scrollPercent = (window.scrollY / totalScroll) * 100;
-            scrollProgress.style.width = scrollPercent + '%';
+            if (scrollProgress) {
+                scrollProgress.style.width = scrollPercent + '%';
+            }
         }
 
         // Header glassmorphism shadow addition
-        if (window.scrollY > 50) {
-            header.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.4), 0 1px 0 rgba(255, 255, 255, 0.05)';
-            header.style.background = 'rgba(8, 8, 13, 0.85)';
-        } else {
-            header.style.boxShadow = 'none';
-            header.style.background = 'rgba(8, 8, 13, 0.6)';
+        if (header) {
+            if (window.scrollY > 40) {
+                header.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.55), 0 1px 0 rgba(213, 133, 31, 0.15)';
+                header.style.background = 'rgba(18, 16, 14, 0.9)';
+            } else {
+                header.style.boxShadow = 'none';
+                header.style.background = 'rgba(18, 16, 14, 0.72)';
+            }
         }
     });
 
 
-    /* ==========================================
-       TYPEWRITER SUBTITLE CYCLE
-       ========================================== */
-    const words = ["Cyber Security Engineer", "Full Stack Developer", "AI Research Enthusiast", "Software Engineer"];
+    /* ==========================================================================
+       TYPEWRITER SUBTITLE CYCLE (NEUTRAL & HIGH-IMPACT)
+       ========================================================================== */
+    const words = [
+        "Software Engineer",
+        "Full Stack Developer",
+        "AI & Systems Researcher",
+        "Creative Problem Solver"
+    ];
     let wordIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
@@ -77,23 +86,23 @@ document.addEventListener('DOMContentLoaded', () => {
             // Delete characters
             typingTextEl.textContent = currentWord.substring(0, charIndex - 1);
             charIndex--;
-            typingSpeed = 50; // Delete faster
+            typingSpeed = 45;
         } else {
             // Add characters
             typingTextEl.textContent = currentWord.substring(0, charIndex + 1);
             charIndex++;
-            typingSpeed = 100; // Type standard speed
+            typingSpeed = 95;
         }
 
         // Cycle control
         if (!isDeleting && charIndex === currentWord.length) {
             // Pause at full word
-            typingSpeed = 2000;
+            typingSpeed = 2200;
             isDeleting = true;
         } else if (isDeleting && charIndex === 0) {
             isDeleting = false;
             wordIndex = (wordIndex + 1) % words.length;
-            typingSpeed = 500; // Pause before typing next word
+            typingSpeed = 450;
         }
 
         setTimeout(typeEffect, typingSpeed);
@@ -103,14 +112,14 @@ document.addEventListener('DOMContentLoaded', () => {
     typeEffect();
 
 
-    /* ==========================================
-       INTERACTIVE CANVAS PARTICLES (CYBER GRAPH)
-       ========================================== */
+    /* ==========================================================================
+       INTERACTIVE CANVAS PARTICLES (WARM AMBER & SAGE GREEN NETWORK)
+       ========================================================================== */
     const canvas = document.getElementById('particle-canvas');
     if (canvas) {
         const ctx = canvas.getContext('2d');
         let particles = [];
-        let mouse = { x: null, y: null, radius: 120 };
+        let mouse = { x: null, y: null, radius: 130 };
 
         // Handle resizing
         function resizeCanvas() {
@@ -131,15 +140,23 @@ document.addEventListener('DOMContentLoaded', () => {
             mouse.y = null;
         });
 
-        // Particle constructor
+        // Particle constructor with warm golden & sage color scheme
         class Particle {
             constructor() {
                 this.x = Math.random() * canvas.width;
                 this.y = Math.random() * canvas.height;
-                this.vx = (Math.random() - 0.5) * 0.4;
-                this.vy = (Math.random() - 0.5) * 0.4;
+                this.vx = (Math.random() - 0.5) * 0.35;
+                this.vy = (Math.random() - 0.5) * 0.35;
                 this.radius = Math.random() * 2 + 1;
-                this.color = Math.random() > 0.5 ? 'rgba(6, 182, 212, 0.4)' : 'rgba(59, 130, 246, 0.4)'; // Cyan or Blue
+                // Alternate between Golden Amber (#D5851F) and Sage Green (#87A96B)
+                const rand = Math.random();
+                if (rand < 0.55) {
+                    this.color = 'rgba(213, 133, 31, 0.45)'; // Warm Amber
+                } else if (rand < 0.85) {
+                    this.color = 'rgba(135, 169, 107, 0.42)'; // Sage Green
+                } else {
+                    this.color = 'rgba(245, 158, 11, 0.55)'; // Bright Golden Glow
+                }
             }
 
             draw() {
@@ -158,7 +175,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 this.x += this.vx;
                 this.y += this.vy;
 
-                // Mouse repel interaction (Cybersecurity barrier effect)
+                // Mouse repel interaction
                 if (mouse.x != null && mouse.y != null) {
                     let dx = this.x - mouse.x;
                     let dy = this.y - mouse.y;
@@ -166,15 +183,15 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (dist < mouse.radius) {
                         let force = (mouse.radius - dist) / mouse.radius;
                         let angle = Math.atan2(dy, dx);
-                        this.x += Math.cos(angle) * force * 1.5;
-                        this.y += Math.sin(angle) * force * 1.5;
+                        this.x += Math.cos(angle) * force * 1.6;
+                        this.y += Math.sin(angle) * force * 1.6;
                     }
                 }
             }
         }
 
-        // Initialize particles
-        const particleCount = Math.min(Math.floor((canvas.width * canvas.height) / 16000), 80);
+        // Initialize particles based on screen real estate
+        const particleCount = Math.min(Math.floor((canvas.width * canvas.height) / 17000), 75);
         for (let i = 0; i < particleCount; i++) {
             particles.push(new Particle());
         }
@@ -183,7 +200,7 @@ document.addEventListener('DOMContentLoaded', () => {
         function animate() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             
-            // Draw connections (node network graph)
+            // Draw connections (warm mesh network)
             for (let i = 0; i < particles.length; i++) {
                 particles[i].update();
                 particles[i].draw();
@@ -193,10 +210,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     const dy = particles[i].y - particles[j].y;
                     const dist = Math.sqrt(dx * dx + dy * dy);
 
-                    if (dist < 100) {
-                        // Node connection opacity based on distance
-                        const alpha = (100 - dist) / 100 * 0.15;
-                        ctx.strokeStyle = `rgba(59, 130, 246, ${alpha})`;
+                    if (dist < 105) {
+                        const alpha = ((105 - dist) / 105) * 0.16;
+                        // Warm amber-gold connecting strands
+                        ctx.strokeStyle = `rgba(213, 133, 31, ${alpha})`;
                         ctx.lineWidth = 1;
                         ctx.beginPath();
                         ctx.moveTo(particles[i].x, particles[i].y);
@@ -211,9 +228,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    /* ==========================================
+    /* ==========================================================================
        SPOTLIGHT GLOW CURSOR POSITION TRACKING
-       ========================================== */
+       ========================================================================== */
     const cards = document.querySelectorAll('.glass-card');
     cards.forEach(card => {
         card.addEventListener('mousemove', (e) => {
@@ -226,9 +243,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
-    /* ==========================================
+    /* ==========================================================================
        SCROLL-REVEAL OBSERVER (FADE-IN EFFECT)
-       ========================================== */
+       ========================================================================== */
     const revealElements = document.querySelectorAll('.reveal');
     
     const revealObserver = new IntersectionObserver((entries) => {
@@ -248,21 +265,20 @@ document.addEventListener('DOMContentLoaded', () => {
                     });
                 }
                 
-                // Keep observing or unobserve to freeze in active state
                 revealObserver.unobserve(entry.target);
             }
         });
     }, {
         threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
+        rootMargin: '0px 0px -40px 0px'
     });
 
     revealElements.forEach(el => revealObserver.observe(el));
 
 
-    /* ==========================================
+    /* ==========================================================================
        ACTIVE NAV LINK HIGHLIGHT SPY
-       ========================================== */
+       ========================================================================== */
     const sections = document.querySelectorAll('section');
     
     const scrollSpyObserver = new IntersectionObserver((entries) => {
@@ -278,7 +294,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }, {
-        threshold: 0.4,
+        threshold: 0.35,
         rootMargin: '-20% 0px -40% 0px'
     });
 
@@ -286,9 +302,9 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-/* ==========================================
+/* ==========================================================================
    CONTACT FORM SUBMISSION HANDLER
-   ========================================== */
+   ========================================================================== */
 function handleFormSubmit(event) {
     event.preventDefault();
     
@@ -305,7 +321,7 @@ function handleFormSubmit(event) {
     status.className = "form-status";
     status.textContent = "";
 
-    // Mock API Delay
+    // Realistic API interaction simulation
     setTimeout(() => {
         // Success feedback
         status.className = "form-status success";
@@ -318,7 +334,7 @@ function handleFormSubmit(event) {
         submitBtn.disabled = false;
         submitBtn.innerHTML = originalText;
         
-        // Smoothly fade out success alert after 6 seconds
+        // Fade out success message
         setTimeout(() => {
             status.style.opacity = '0';
             setTimeout(() => {
@@ -328,18 +344,18 @@ function handleFormSubmit(event) {
             }, 500);
         }, 6000);
 
-    }, 1500);
+    }, 1200);
 }
 
 
-/* ==========================================
+/* ==========================================================================
    RESUME PREVIEW MODAL CONTROL
-   ========================================== */
+   ========================================================================== */
 function openResumeModal() {
     const modal = document.getElementById('resume-modal');
     if (modal) {
         modal.style.display = 'block';
-        document.body.style.overflow = 'hidden'; // Lock background scrolling
+        document.body.style.overflow = 'hidden';
     }
 }
 
@@ -347,11 +363,11 @@ function closeResumeModal() {
     const modal = document.getElementById('resume-modal');
     if (modal) {
         modal.style.display = 'none';
-        document.body.style.overflow = 'auto'; // Restore background scrolling
+        document.body.style.overflow = 'auto';
     }
 }
 
-// Close modal if user clicks outside of content box
+// Close modal if user clicks outside of modal content
 window.addEventListener('click', (event) => {
     const modal = document.getElementById('resume-modal');
     if (event.target === modal) {
@@ -359,7 +375,7 @@ window.addEventListener('click', (event) => {
     }
 });
 
-// Print/PDF Handler
+// Print or Save PDF
 function printResume() {
     window.print();
 }
