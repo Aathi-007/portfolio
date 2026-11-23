@@ -1,12 +1,9 @@
-/* ==========================================================================
-   AATHILAKSHMI S P - PORTFOLIO INTERACTIVE CONTROLLER
-   ========================================================================== */
-
+// Wait for the DOM to load
 document.addEventListener('DOMContentLoaded', () => {
 
-    /* ==========================================
+    /* ==========================================================================
        MOBILE NAVIGATION MENU
-       ========================================== */
+       ========================================================================== */
     const mobileToggle = document.getElementById('mobile-toggle');
     const navMenu = document.getElementById('nav-menu');
     const navLinks = document.querySelectorAll('.nav-link');
@@ -36,41 +33,41 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
-    /* ==========================================
-       SCROLL INDICATOR & HEADER BLUR STYLE
-       ========================================== */
+    /* ==========================================================================
+       SCROLL INDICATOR & GLASSMORPHISM HEADER
+       ========================================================================== */
     const scrollProgress = document.getElementById('scroll-progress');
     const header = document.querySelector('.header');
 
     window.addEventListener('scroll', () => {
+        // Scroll progress bar width
         const totalScroll = document.documentElement.scrollHeight - window.innerHeight;
         if (totalScroll > 0 && scrollProgress) {
             const scrollPercent = (window.scrollY / totalScroll) * 100;
             scrollProgress.style.width = scrollPercent + '%';
         }
 
+        // Header glassmorphism shadow addition
         if (header) {
-            if (window.scrollY > 50) {
-                header.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.5), 0 1px 0 rgba(255, 255, 255, 0.08)';
-                header.style.background = 'rgba(8, 8, 13, 0.9)';
+            if (window.scrollY > 40) {
+                header.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.55), 0 1px 0 rgba(213, 133, 31, 0.15)';
+                header.style.background = 'rgba(18, 16, 14, 0.9)';
             } else {
                 header.style.boxShadow = 'none';
-                header.style.background = 'rgba(8, 8, 13, 0.7)';
+                header.style.background = 'rgba(18, 16, 14, 0.72)';
             }
         }
     });
 
 
-    /* ==========================================
-       TYPEWRITER SUBTITLE CYCLE (ALIGNED TO RESUME)
-       ========================================== */
-    const titles = [
-        "Cybersecurity Enthusiast",
-        "UI/UX Designer",
-        "Full-Stack Developer",
-        "Indian Patent Co-Inventor",
-        "Springer Nature Author",
-        "SIH 2026 National Finalist"
+    /* ==========================================================================
+       TYPEWRITER SUBTITLE CYCLE (NEUTRAL & HIGH-IMPACT)
+       ========================================================================== */
+    const words = [
+        "Software Engineer",
+        "Full Stack Developer",
+        "Systems & AI Researcher",
+        "Creative Problem Solver"
     ];
     let wordIndex = 0;
     let charIndex = 0;
@@ -81,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function typeEffect() {
         if (!typingTextEl) return;
         
-        const currentWord = titles[wordIndex];
+        const currentWord = words[wordIndex];
         
         if (isDeleting) {
             typingTextEl.textContent = currentWord.substring(0, charIndex - 1);
@@ -90,32 +87,36 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             typingTextEl.textContent = currentWord.substring(0, charIndex + 1);
             charIndex++;
-            typingSpeed = 85;
+            typingSpeed = 90;
         }
 
+        // Cycle control
         if (!isDeleting && charIndex === currentWord.length) {
             typingSpeed = 2200; // Hold completed word
             isDeleting = true;
         } else if (isDeleting && charIndex === 0) {
             isDeleting = false;
-            wordIndex = (wordIndex + 1) % titles.length;
-            typingSpeed = 400; // Pause before typing next title
+            wordIndex = (wordIndex + 1) % words.length;
+            typingSpeed = 450;
         }
 
         setTimeout(typeEffect, typingSpeed);
     }
+    
+    // Start typewriter
     typeEffect();
 
 
-    /* ==========================================
-       CANVAS PARTICLES - CYBER GRAPH MATRIX
-       ========================================== */
+    /* ==========================================================================
+       INTERACTIVE CANVAS PARTICLES (WARM AMBER & SAGE GREEN NETWORK)
+       ========================================================================== */
     const canvas = document.getElementById('particle-canvas');
     if (canvas) {
         const ctx = canvas.getContext('2d');
         let particles = [];
         let mouse = { x: null, y: null, radius: 130 };
 
+        // Handle resizing
         function resizeCanvas() {
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
@@ -123,6 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
         resizeCanvas();
         window.addEventListener('resize', resizeCanvas);
 
+        // Track mouse position relative to window
         window.addEventListener('mousemove', (e) => {
             mouse.x = e.clientX;
             mouse.y = e.clientY;
@@ -133,14 +135,23 @@ document.addEventListener('DOMContentLoaded', () => {
             mouse.y = null;
         });
 
+        // Particle constructor with warm golden & sage color scheme
         class Particle {
             constructor() {
                 this.x = Math.random() * canvas.width;
                 this.y = Math.random() * canvas.height;
-                this.vx = (Math.random() - 0.5) * 0.45;
-                this.vy = (Math.random() - 0.5) * 0.45;
+                this.vx = (Math.random() - 0.5) * 0.35;
+                this.vy = (Math.random() - 0.5) * 0.35;
                 this.radius = Math.random() * 2 + 1;
-                this.color = Math.random() > 0.5 ? 'rgba(6, 182, 212, 0.45)' : 'rgba(59, 130, 246, 0.45)';
+                // Alternate between Golden Amber (#D5851F), Sage Green (#87A96B), and Warm Gold
+                const rand = Math.random();
+                if (rand < 0.55) {
+                    this.color = 'rgba(213, 133, 31, 0.45)'; // Warm Amber
+                } else if (rand < 0.85) {
+                    this.color = 'rgba(135, 169, 107, 0.42)'; // Sage Green
+                } else {
+                    this.color = 'rgba(245, 158, 11, 0.55)'; // Bright Golden Glow
+                }
             }
 
             draw() {
@@ -151,35 +162,40 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             update() {
+                // Bounds check
                 if (this.x < 0 || this.x > canvas.width) this.vx = -this.vx;
                 if (this.y < 0 || this.y > canvas.height) this.vy = -this.vy;
 
+                // Move
                 this.x += this.vx;
                 this.y += this.vy;
 
-                // Mouse repel shield effect
-                if (mouse.x !== null && mouse.y !== null) {
-                    const dx = this.x - mouse.x;
-                    const dy = this.y - mouse.y;
-                    const dist = Math.sqrt(dx * dx + dy * dy);
+                // Mouse repel interaction
+                if (mouse.x != null && mouse.y != null) {
+                    let dx = this.x - mouse.x;
+                    let dy = this.y - mouse.y;
+                    let dist = Math.sqrt(dx * dx + dy * dy);
                     if (dist < mouse.radius) {
-                        const force = (mouse.radius - dist) / mouse.radius;
-                        const angle = Math.atan2(dy, dx);
-                        this.x += Math.cos(angle) * force * 1.8;
-                        this.y += Math.sin(angle) * force * 1.8;
+                        let force = (mouse.radius - dist) / mouse.radius;
+                        let angle = Math.atan2(dy, dx);
+                        this.x += Math.cos(angle) * force * 1.6;
+                        this.y += Math.sin(angle) * force * 1.6;
                     }
                 }
             }
         }
 
-        const particleCount = Math.min(Math.floor((canvas.width * canvas.height) / 15000), 75);
+        // Initialize particles based on screen real estate
+        const particleCount = Math.min(Math.floor((canvas.width * canvas.height) / 17000), 75);
         for (let i = 0; i < particleCount; i++) {
             particles.push(new Particle());
         }
 
+        // Render loop
         function animate() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             
+            // Draw connections (warm mesh network)
             for (let i = 0; i < particles.length; i++) {
                 particles[i].update();
                 particles[i].draw();
@@ -189,9 +205,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     const dy = particles[i].y - particles[j].y;
                     const dist = Math.sqrt(dx * dx + dy * dy);
 
-                    if (dist < 110) {
-                        const alpha = ((110 - dist) / 110) * 0.18;
-                        ctx.strokeStyle = `rgba(59, 130, 246, ${alpha})`;
+                    if (dist < 105) {
+                        const alpha = ((105 - dist) / 105) * 0.16;
+                        // Warm amber-gold connecting strands
+                        ctx.strokeStyle = `rgba(213, 133, 31, ${alpha})`;
                         ctx.lineWidth = 1;
                         ctx.beginPath();
                         ctx.moveTo(particles[i].x, particles[i].y);
@@ -206,9 +223,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    /* ==========================================
-     SPOTLIGHT GLOW CURSOR POSITION TRACKING
-       ========================================== */
+    /* ==========================================================================
+       SPOTLIGHT GLOW CURSOR POSITION TRACKING
+       ========================================================================== */
     const cards = document.querySelectorAll('.glass-card');
     cards.forEach(card => {
         card.addEventListener('mousemove', (e) => {
@@ -221,9 +238,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
-    /* ==========================================
-       SCROLL-REVEAL & STAT PROGRESS OBSERVER
-       ========================================== */
+    /* ==========================================================================
+       SCROLL-REVEAL OBSERVER (FADE-IN EFFECT & PROGRESS BARS)
+       ========================================================================== */
     const revealElements = document.querySelectorAll('.reveal');
     
     const revealObserver = new IntersectionObserver((entries) => {
@@ -231,7 +248,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('active');
                 
-                // Animate skill progress bars
+                // Animate progress bars when skills section is revealed
                 const progressBars = entry.target.querySelectorAll('.skill-progress-bar');
                 if (progressBars.length > 0) {
                     progressBars.forEach(bar => {
@@ -239,7 +256,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         bar.style.width = '0%';
                         setTimeout(() => {
                             bar.style.width = width;
-                        }, 120);
+                        }, 100);
                     });
                 }
                 
@@ -247,80 +264,50 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }, {
-        threshold: 0.08,
+        threshold: 0.1,
         rootMargin: '0px 0px -40px 0px'
     });
 
     revealElements.forEach(el => revealObserver.observe(el));
 
 
-    /* ==========================================
-       INTERACTIVE PROJECT FILTERS
-       ========================================== */
+    /* ==========================================================================
+       INTERACTIVE PROJECT CATEGORY FILTERS
+       ========================================================================== */
     const filterBtns = document.querySelectorAll('.filter-btn');
-    const projectCards = document.querySelectorAll('.featured-project-card, .project-card');
+    const projectCards = document.querySelectorAll('.projects-grid .project-card, .research-highlight-card');
 
-    filterBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            filterBtns.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
+    if (filterBtns.length > 0) {
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
 
-            const filterValue = btn.getAttribute('data-filter');
+                const filter = btn.getAttribute('data-filter');
 
-            projectCards.forEach(card => {
-                const categories = card.getAttribute('data-category') || '';
-                if (filterValue === 'all' || categories.includes(filterValue)) {
-                    card.style.display = '';
-                    card.style.opacity = '0';
-                    card.style.transform = 'translateY(15px)';
-                    setTimeout(() => {
-                        card.style.transition = 'all 0.4s ease';
-                        card.style.opacity = '1';
-                        card.style.transform = 'translateY(0)';
-                    }, 50);
-                } else {
-                    card.style.display = 'none';
-                }
+                projectCards.forEach(card => {
+                    const cardCat = card.getAttribute('data-category');
+                    if (filter === 'all' || cardCat === filter) {
+                        card.style.display = '';
+                        card.style.opacity = '0';
+                        card.style.transform = 'translateY(15px)';
+                        setTimeout(() => {
+                            card.style.transition = 'all 0.35s ease';
+                            card.style.opacity = '1';
+                            card.style.transform = 'translateY(0)';
+                        }, 40);
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
             });
         });
-    });
+    }
 
 
-    /* ==========================================
-       INTERACTIVE SKILL CATEGORY FILTERS
-       ========================================== */
-    const skillTabs = document.querySelectorAll('.skill-tab-btn');
-    const skillCategories = document.querySelectorAll('.skill-category');
-
-    skillTabs.forEach(tab => {
-        tab.addEventListener('click', () => {
-            skillTabs.forEach(t => t.classList.remove('active'));
-            tab.classList.add('active');
-
-            const filter = tab.getAttribute('data-filter');
-
-            skillCategories.forEach(cat => {
-                const catType = cat.getAttribute('data-category');
-                if (filter === 'all' || catType === filter) {
-                    cat.style.display = '';
-                    cat.style.opacity = '0';
-                    cat.style.transform = 'translateY(15px)';
-                    setTimeout(() => {
-                        cat.style.transition = 'all 0.4s ease';
-                        cat.style.opacity = '1';
-                        cat.style.transform = 'translateY(0)';
-                    }, 50);
-                } else {
-                    cat.style.display = 'none';
-                }
-            });
-        });
-    });
-
-
-    /* ==========================================
-       ACTIVE NAVIGATION SPY
-       ========================================== */
+    /* ==========================================================================
+       ACTIVE NAV LINK HIGHLIGHT SPY
+       ========================================================================== */
     const sections = document.querySelectorAll('section');
     
     const scrollSpyObserver = new IntersectionObserver((entries) => {
@@ -337,16 +324,16 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, {
         threshold: 0.35,
-        rootMargin: '-15% 0px -40% 0px'
+        rootMargin: '-20% 0px -40% 0px'
     });
 
     sections.forEach(sec => scrollSpyObserver.observe(sec));
 });
 
 
-/* ==========================================
+/* ==========================================================================
    TOAST NOTIFICATION ENGINE
-   ========================================== */
+   ========================================================================== */
 function showToast(message, icon = 'fa-solid fa-circle-check') {
     const container = document.getElementById('toast-container');
     if (!container) return;
@@ -368,9 +355,9 @@ function showToast(message, icon = 'fa-solid fa-circle-check') {
 }
 
 
-/* ==========================================
+/* ==========================================================================
    CLIPBOARD UTILITY (COPY CONTACT / CITATIONS)
-   ========================================== */
+   ========================================================================== */
 function copyContact(text, feedbackMsg = 'Copied to clipboard!') {
     navigator.clipboard.writeText(text).then(() => {
         showToast(feedbackMsg, 'fa-solid fa-copy');
@@ -386,7 +373,7 @@ function copyContact(text, feedbackMsg = 'Copied to clipboard!') {
     });
 }
 
-function copyCitation(citationText, feedbackMsg = 'Citation copied!') {
+function copyCitation(citationText, feedbackMsg = 'Citation copied to clipboard!') {
     navigator.clipboard.writeText(citationText).then(() => {
         showToast(feedbackMsg, 'fa-solid fa-book-bookmark');
     }).catch(() => {
@@ -395,9 +382,9 @@ function copyCitation(citationText, feedbackMsg = 'Citation copied!') {
 }
 
 
-/* ==========================================
+/* ==========================================================================
    CONTACT FORM SUBMISSION HANDLER
-   ========================================== */
+   ========================================================================== */
 function handleFormSubmit(event) {
     event.preventDefault();
     
@@ -414,7 +401,7 @@ function handleFormSubmit(event) {
     status.className = "form-status";
     status.textContent = "";
 
-    // Simulated API submission
+    // Realistic API interaction simulation
     setTimeout(() => {
         status.className = "form-status success";
         status.innerHTML = `<i class="fa-solid fa-circle-check"></i> Thank you! Your message has been sent successfully. I will get back to you shortly.`;
@@ -425,6 +412,7 @@ function handleFormSubmit(event) {
         submitBtn.disabled = false;
         submitBtn.innerHTML = originalText;
         
+        // Fade out success message
         setTimeout(() => {
             status.style.opacity = '0';
             setTimeout(() => {
@@ -438,14 +426,14 @@ function handleFormSubmit(event) {
 }
 
 
-/* ==========================================
+/* ==========================================================================
    RESUME PREVIEW MODAL CONTROL
-   ========================================== */
+   ========================================================================== */
 function openResumeModal() {
     const modal = document.getElementById('resume-modal');
     if (modal) {
         modal.style.display = 'block';
-        document.body.style.overflow = 'hidden'; // Lock background scrolling
+        document.body.style.overflow = 'hidden';
     }
 }
 
@@ -453,11 +441,11 @@ function closeResumeModal() {
     const modal = document.getElementById('resume-modal');
     if (modal) {
         modal.style.display = 'none';
-        document.body.style.overflow = 'auto'; // Restore background scrolling
+        document.body.style.overflow = 'auto';
     }
 }
 
-// Close modal if user clicks outside of content box
+// Close modal if user clicks outside of modal content
 window.addEventListener('click', (event) => {
     const modal = document.getElementById('resume-modal');
     if (event.target === modal) {
@@ -472,7 +460,7 @@ window.addEventListener('keydown', (event) => {
     }
 });
 
-// Print or Save as PDF
+// Print or Save PDF
 function printResume() {
     window.print();
 }
